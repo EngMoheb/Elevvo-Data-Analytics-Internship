@@ -1,2 +1,2 @@
 # Elevvo-Data-Analytics-Internship
-My one-month remote internship in Elevvo Data Analytics.
+My one-month remote  Data Analytics internship at Elevvo.
