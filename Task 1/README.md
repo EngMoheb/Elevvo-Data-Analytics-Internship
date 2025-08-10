@@ -1,4 +1,4 @@
-# Sales Performance Dashboard (Excel)
+# Superstore Sales Performance Dashboard (Excel)
 
 **Superstore (Kaggle) → Clean, analyze, and deliver an interactive Excel dashboard**
 
