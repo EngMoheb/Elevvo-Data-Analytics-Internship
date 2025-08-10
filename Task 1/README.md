@@ -2,7 +2,7 @@
 
 **Superstore (Kaggle) → Clean, analyze, and deliver an interactive Excel dashboard**
 
-![Final Dashboard](Task%201/Final_Dashboard.png)
+![Final Dashboard](Final_Dashboard.png)
 
 ---
 
@@ -32,15 +32,15 @@ Imagine you're handed thousands of messy sales transactions and asked to turn th
 ## Problem & Dataset Story
 
 **Task brief:**  
-![Task brief](Task%201/Task%20Details.png)
+![Task brief](Task%20Details.png)
 
 **Business question:** Summarize sales performance and identify short-term (MoM) and long-term (YoY) trends to help plan promotions and manage inventory.
 
 **Dataset:** [Superstore Sales dataset](https://www.kaggle.com/datasets/rohitsahoo/sales-forecasting) from Kaggle
 
-![Raw data preview](Task%201/RawData.png)
+![Raw data preview](RawData.png)
 
-**Raw file used:** [RawData.xlsx](Task%201/RawData.xlsx)
+**Raw file used:** [RawData.xlsx](RawData.xlsx)
 
 The raw data captured orders across regions, categories and years. It required cleaning and enrichment before we could rely on trends and growth metrics.
 
@@ -51,14 +51,14 @@ The raw data captured orders across regions, categories and years. It required c
 > Clean data = trustworthy analysis. Cleaning was the foundation, not an afterthought.
 
 **Preview (cleaned snapshot):**  
-![Cleaned data snapshot](Task%201/DataCleaned.png)
+![Cleaned data snapshot](DataCleaned.png)
 
-**Cleaned dataset saved as:** [CleanedData.xlsx](Task%201/CleanedData.xlsx)
+**Cleaned dataset saved as:** [CleanedData.xlsx](CleanedData.xlsx)
 
 ### Transformation steps (strict & to the point)
 
 1. **Ingest**  
-   - Imported `Task 1/RawData.xlsx` into Excel as an official **Table** named `tblSales`.
+   - Imported `RawData.xlsx` into Excel as an official **Table** named `tblSales`.
 
 2. **Type & value validation**  
    - Formatted `Sales` as *Currency* and flagged negative/zero entries.  
@@ -100,13 +100,13 @@ These helper columns are the foundation that makes our EDA robust, repeatable, a
 
 ## Exploratory Data Analysis (EDA)
 
-**EDA workbook:** [EDA.xlsx](Task%201/EDA.xlsx) — sheets: `Trend_PivotTable`, `MoM_PivotTable`, `YoY_PivotTable`, `Dashboard_Excel`.
+**EDA workbook:** [EDA.xlsx](EDA.xlsx) — sheets: `Trend_PivotTable`, `MoM_PivotTable`, `YoY_PivotTable`, `Dashboard_Excel`.
 
 **Monthly revenue trend:**  
-![Monthly Revenue Trend](Task%201/MonthlyRevenueTrend.png)
+![Monthly Revenue Trend](MonthlyRevenueTrend.png)
 
 **Monthly units trend:**  
-![Monthly Units Trend](Task%201/MonthlyUnit.png)
+![Monthly Units Trend](MonthlyUnit.png)
 
 ### What we ran & the insights we found
 
@@ -115,12 +115,12 @@ These helper columns are the foundation that makes our EDA robust, repeatable, a
    - **Insight:** Clear seasonality — strong Q4 peaks and consistent Q1 troughs. Revenue grows toward 2018.
 
 2. **Month-over-Month (MoM)**  
-   ![MoM Analysis](Task%201/MoM.png)
+   ![MoM Analysis](MoM.png)
    - **What we did:** `Show Values As → % Difference From (previous)` on `Year–Month`.  
    - **Insight:** Average MoM ≈ **+44.1%**, but volatility is significant; narrow months with low bases (e.g., Feb 2015) produce extreme % swings (Mar 2015 ≈ **+1,121.4%**).
 
 3. **Year-over-Year (YoY)**  
-   ![YoY Analysis](Task%201/YoY.png)
+   ![YoY Analysis](YoY.png)
    - **What we did:** Pivot by `Order Year` and `% Difference From (previous)`.  
    - **Insight:** Recovery after 2016 dip and healthy YoY growth in 2017–2018 (2017 ≈ +30.6%, 2018 ≈ +20.3%).
 
@@ -136,16 +136,16 @@ These helper columns are the foundation that makes our EDA robust, repeatable, a
    - **What we did:** Flagged months with extreme MoM values for investigation.  
    - **Insight:** Large anomalies likely correspond to promotions, data issues, or batch returns; these require operational follow-up.
 
-> For hands-on exploration open the interactive pivots in [EDA.xlsx](Task%201/EDA.xlsx).
+> For hands-on exploration open the interactive pivots in [EDA.xlsx](EDA.xlsx).
 
 ---
 
 ## Dashboard Creation
 
 **Final dashboard (screenshot):**  
-![Final Dashboard](Task%201/Final_Dashboard.png)
+![Final Dashboard](Final_Dashboard.png)
 
-Open [EDA.xlsx](Task%201/EDA.xlsx) → sheet `Dashboard_Excel` to interact with the live dashboard.
+Open [EDA.xlsx](EDA.xlsx) → sheet `Dashboard_Excel` to interact with the live dashboard.
 
 ### Dashboard components
 
@@ -176,28 +176,28 @@ Open [EDA.xlsx](Task%201/EDA.xlsx) → sheet `Dashboard_Excel` to interact with 
 
 ## Project Files & Links
 
-All Task 1 files are in the Task 1 folder:
+All files are in this task folder:
 
-- **Raw data:** [RawData.xlsx](Task%201/RawData.xlsx) — original dataset.  
-- **Raw preview:** [RawData.png](Task%201/RawData.png) — snapshot.  
-- **Cleaned data:** [CleanedData.xlsx](Task%201/CleanedData.xlsx) — cleaned table `tblSales`.  
-- **Cleaned snapshot:** [DataCleaned.png](Task%201/DataCleaned.png).  
-- **EDA & Dashboard workbook:** [EDA.xlsx](Task%201/EDA.xlsx).  
-- **Final dashboard image:** [Final_Dashboard.png](Task%201/Final_Dashboard.png).  
-- **Task brief image:** [Task Details.png](Task%201/Task%20Details.png).  
+- **Raw data:** [RawData.xlsx](RawData.xlsx) — original dataset.  
+- **Raw preview:** [RawData.png](RawData.png) — snapshot.  
+- **Cleaned data:** [CleanedData.xlsx](CleanedData.xlsx) — cleaned table `tblSales`.  
+- **Cleaned snapshot:** [DataCleaned.png](DataCleaned.png).  
+- **EDA & Dashboard workbook:** [EDA.xlsx](EDA.xlsx).  
+- **Final dashboard image:** [Final_Dashboard.png](Final_Dashboard.png).  
+- **Task brief image:** [Task Details.png](Task%20Details.png).  
 - **Kaggle source:** [Superstore Sales dataset](https://www.kaggle.com/datasets/rohitsahoo/sales-forecasting)
 
-> Ensure filenames are present in the repo with exactly these names (case-sensitive on some systems).
+> Ensure filenames are present in the task folder with exactly these names (case-sensitive on some systems).
 
 ---
 
 ## Reproduce (quick steps)
 
-1. Open [RawData.xlsx](Task%201/RawData.xlsx) and convert the data to an Excel Table named **`tblSales`**.  
-2. Apply the cleaning steps (normalize text, convert dates) and create helper columns described above. Save as [CleanedData.xlsx](Task%201/CleanedData.xlsx).  
-3. Open [EDA.xlsx](Task%201/EDA.xlsx). If pivots are disconnected, update their data source to `Task 1/CleanedData.xlsx` (PivotTable Tools → Change Data Source).  
+1. Open [RawData.xlsx](RawData.xlsx) and convert the data to an Excel Table named **`tblSales`**.  
+2. Apply the cleaning steps (normalize text, convert dates) and create helper columns described above. Save as [CleanedData.xlsx](CleanedData.xlsx).  
+3. Open [EDA.xlsx](EDA.xlsx). If pivots are disconnected, update their data source to `CleanedData.xlsx` (PivotTable Tools → Change Data Source).  
 4. Refresh All (Data → Refresh All). Validate slicer behavior and KPI card updates.  
-5. Re-export dashboard image if needed: `Task 1/Final_Dashboard.png`.
+5. Re-export dashboard image if needed: `Final_Dashboard.png`.
 
 ---
 
