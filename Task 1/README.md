@@ -2,6 +2,8 @@
 
 **Superstore (Kaggle) → Clean, analyze, and deliver an interactive Excel dashboard**
 
+![Final Dashboard](Task%201/Final_Dashboard.png)
+
 ---
 
 ## Story (quick)
@@ -16,7 +18,7 @@ Imagine you're handed thousands of messy sales transactions and asked to turn th
 
 - [Problem & Dataset Story](#problem--dataset-story)  
 - [Data Cleaning Journey](#data-cleaning-journey)  
-- [Helper Columns — why we added them](#helper-columns--why-we-added-them)  
+- [Helper Columns](#helper-columns)  
 - [Exploratory Data Analysis (EDA)](#exploratory-data-analysis-eda)  
 - [Dashboard Creation](#dashboard-creation)  
 - [Key Business Insights](#key-business-insights)  
@@ -30,13 +32,13 @@ Imagine you're handed thousands of messy sales transactions and asked to turn th
 ## Problem & Dataset Story
 
 **Task brief:**  
-[![Task brief](Task%201/Task%20Details.png)](Task%201/Task%20Details.png)
+![Task brief](Task%201/Task%20Details.png)
 
 **Business question:** Summarize sales performance and identify short-term (MoM) and long-term (YoY) trends to help plan promotions and manage inventory.
 
 **Dataset:** [Superstore Sales dataset](https://www.kaggle.com/datasets/rohitsahoo/sales-forecasting) from Kaggle
 
-[![Raw data preview](Task%201/RawData.png)](Task%201/RawData.png)
+![Raw data preview](Task%201/RawData.png)
 
 **Raw file used:** [RawData.xlsx](Task%201/RawData.xlsx)
 
@@ -49,7 +51,7 @@ The raw data captured orders across regions, categories and years. It required c
 > Clean data = trustworthy analysis. Cleaning was the foundation, not an afterthought.
 
 **Preview (cleaned snapshot):**  
-[![Cleaned data snapshot](Task%201/DataCleaned.png)](Task%201/DataCleaned.png)
+![Cleaned data snapshot](Task%201/DataCleaned.png)
 
 **Cleaned dataset saved as:** [CleanedData.xlsx](Task%201/CleanedData.xlsx)
 
@@ -72,12 +74,9 @@ The raw data captured orders across regions, categories and years. It required c
 5. **Missing / anomalous values**  
    - Flagged critical gaps and reviewed them; corrected or excluded rows as appropriate.
 
-6. **Save**  
-   - Final cleaned table stored as [CleanedData.xlsx](Task%201/CleanedData.xlsx).
-
 ---
 
-## Helper Columns — why we added them
+## Helper Columns
 
 We added helper columns to enhance our EDA capabilities and ensure reliable pivot table operations. These columns transform the raw data into analysis-ready format and enable sophisticated time-based calculations that would otherwise be complex or error-prone.
 
@@ -101,10 +100,13 @@ These helper columns are the foundation that makes our EDA robust, repeatable, a
 
 ## Exploratory Data Analysis (EDA)
 
-**EDA workbook:** [EDA.xlsx](Task%201/EDA.xlsx) — sheets: `pt_Trend`, `pt_MoM`, `pt_YoY`, `Dashboard_Excel`.
+**EDA workbook:** [EDA.xlsx](Task%201/EDA.xlsx) — sheets: `Trend_PivotTable`, `MoM_PivotTable`, `YoY_PivotTable`, `Dashboard_Excel`.
 
-**Monthly revenue preview:**  
-[![Monthly Revenue Trend](Task%201/MonthlyRevenueTrend.png)](Task%201/MonthlyRevenueTrend.png)
+**Monthly revenue trend:**  
+![Monthly Revenue Trend](Task%201/MonthlyRevenueTrend.png)
+
+**Monthly units trend:**  
+![Monthly Units Trend](Task%201/MonthlyUnit.png)
 
 ### What we ran & the insights we found
 
@@ -113,10 +115,12 @@ These helper columns are the foundation that makes our EDA robust, repeatable, a
    - **Insight:** Clear seasonality — strong Q4 peaks and consistent Q1 troughs. Revenue grows toward 2018.
 
 2. **Month-over-Month (MoM)**  
+   ![MoM Analysis](Task%201/MoM.png)
    - **What we did:** `Show Values As → % Difference From (previous)` on `Year–Month`.  
    - **Insight:** Average MoM ≈ **+44.1%**, but volatility is significant; narrow months with low bases (e.g., Feb 2015) produce extreme % swings (Mar 2015 ≈ **+1,121.4%**).
 
 3. **Year-over-Year (YoY)**  
+   ![YoY Analysis](Task%201/YoY.png)
    - **What we did:** Pivot by `Order Year` and `% Difference From (previous)`.  
    - **Insight:** Recovery after 2016 dip and healthy YoY growth in 2017–2018 (2017 ≈ +30.6%, 2018 ≈ +20.3%).
 
@@ -139,7 +143,7 @@ These helper columns are the foundation that makes our EDA robust, repeatable, a
 ## Dashboard Creation
 
 **Final dashboard (screenshot):**  
-[![Final Dashboard](Task%201/Final_Dashboard.png)](Task%201/Final_Dashboard.png)
+![Final Dashboard](Task%201/Final_Dashboard.png)
 
 Open [EDA.xlsx](Task%201/EDA.xlsx) → sheet `Dashboard_Excel` to interact with the live dashboard.
 
