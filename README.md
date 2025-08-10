@@ -1,18 +1,14 @@
 # 📂 Elevvo Internship Repository Overview
+  This README  is the central hub for all task guides you through the repository’s structure, task folder organization, and the lifecycle of each deliverable.
 
-Welcome to the Elevvo Internship Repository — the central hub for all tasks, materials, and insights from our one‑month, fully‑sponsored remote Data Analytics internship at Elevvo (Cairo). This README guides you through the repository’s structure, task folder organization, and the lifecycle of each deliverable.
-
-
-This repository captures our journey through real‑world data analytics, from Excel mastery to SQL prowess and Power BI storytelling. Each folder embodies our commitment to transforming raw data into actionable business insights. Dive in, explore, and contribute to our data-driven success at Elevvo! 🚀
+ 
 📁 Repository Structure
 
 elevvo-intern/
 
 ├── 📄 README.md # This overview document
 
-├── 📂 data/ # Shared raw & cleaned datasets
-
-├── 📂 learning_materials/ # General reference guides & cheat-sheets
+ 
 
 ├── 📂 task-01_excel_dashboard/ # Task 1: Excel Sales Dashboard
 
