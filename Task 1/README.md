@@ -1,8 +1,5 @@
-# Superstore Sales Performance Dashboard (Excel)
-
-**Superstore (Kaggle) → Clean, analyze, and deliver an interactive Excel dashboard**
-
-![Final Dashboard](Final_Dashboard.png)
+# Sales Performance Dashboard (Excel)
+![Superstore cover image](Superstore.jpg)
 
 ---
 
@@ -30,13 +27,9 @@ Imagine you're handed thousands of messy sales transactions and asked to turn th
 ---
 
 ## Problem & Dataset Story
-
-**Task brief:**  
 ![Task brief](Task%20Details.png)
 
-**Business question:** Summarize sales performance and identify short-term (MoM) and long-term (YoY) trends to help plan promotions and manage inventory.
-
-**Dataset:** [Superstore Sales dataset](https://www.kaggle.com/datasets/rohitsahoo/sales-forecasting) from Kaggle
+**Dataset:** [Superstore Sales dataset](https://www.kaggle.com/datasets/rohitsahoo/sales-forecasting)  
 
 ![Raw data preview](RawData.png)
 
