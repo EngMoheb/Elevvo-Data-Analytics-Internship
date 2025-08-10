@@ -1,4 +1,4 @@
-# Sales Performance Dashboard (Excel)
+# Superstore Sales Performance Excel Dashboard 
 ![Superstore cover image](Superstore.jpg)
 
 ---
@@ -31,9 +31,9 @@ Imagine you're handed thousands of messy sales transactions and asked to turn th
 
 **Dataset:** [Superstore Sales dataset](https://www.kaggle.com/datasets/rohitsahoo/sales-forecasting)  
 
-![Raw data preview](RawData.png)
+![Raw data preview](OriginalData.png)
 
-**Raw file used:** [RawData.xlsx](RawData.xlsx)
+**Excel sheet used:** [RawData.xlsx](RawData.xlsx)
 
 The raw data captured orders across regions, categories and years. It required cleaning and enrichment before we could rely on trends and growth metrics.
 
@@ -43,7 +43,7 @@ The raw data captured orders across regions, categories and years. It required c
 
 > Clean data = trustworthy analysis. Cleaning was the foundation, not an afterthought.
 
-**Preview (cleaned snapshot):**  
+**(Cleaned Snapshot):**  
 ![Cleaned data snapshot](DataCleaned.png)
 
 **Cleaned dataset saved as:** [CleanedData.xlsx](CleanedData.xlsx)
@@ -93,12 +93,14 @@ These helper columns are the foundation that makes our EDA robust, repeatable, a
 
 ## Exploratory Data Analysis (EDA)
 
-**EDA workbook:** [EDA.xlsx](EDA.xlsx) — sheets: `Trend_PivotTable`, `MoM_PivotTable`, `YoY_PivotTable`, `Dashboard_Excel`.
+**EDA workbook:** [EDA.xlsx](EDA.xlsx)  
 
-**Monthly revenue trend:**  
+**Monthly revenue trend**  
+
 ![Monthly Revenue Trend](MonthlyRevenueTrend.png)
 
-**Monthly units trend:**  
+**Monthly units trend**  
+
 ![Monthly Units Trend](MonthlyUnit.png)
 
 ### What we ran & the insights we found
@@ -107,12 +109,14 @@ These helper columns are the foundation that makes our EDA robust, repeatable, a
    - **What we did:** Pivot with `Year–Month` rows and `Sum(Sales)` + `Sum(Units Sold)` values.  
    - **Insight:** Clear seasonality — strong Q4 peaks and consistent Q1 troughs. Revenue grows toward 2018.
 
-2. **Month-over-Month (MoM)**  
+2. **Month-over-Month (MoM)** 
+ 
    ![MoM Analysis](MoM.png)
    - **What we did:** `Show Values As → % Difference From (previous)` on `Year–Month`.  
    - **Insight:** Average MoM ≈ **+44.1%**, but volatility is significant; narrow months with low bases (e.g., Feb 2015) produce extreme % swings (Mar 2015 ≈ **+1,121.4%**).
 
 3. **Year-over-Year (YoY)**  
+
    ![YoY Analysis](YoY.png)
    - **What we did:** Pivot by `Order Year` and `% Difference From (previous)`.  
    - **Insight:** Recovery after 2016 dip and healthy YoY growth in 2017–2018 (2017 ≈ +30.6%, 2018 ≈ +20.3%).
@@ -133,9 +137,8 @@ These helper columns are the foundation that makes our EDA robust, repeatable, a
 
 ---
 
-## Dashboard Creation
+## Final Dashboard
 
-**Final dashboard (screenshot):**  
 ![Final Dashboard](Final_Dashboard.png)
 
 Open [EDA.xlsx](EDA.xlsx) → sheet `Dashboard_Excel` to interact with the live dashboard.
@@ -179,18 +182,6 @@ All files are in this task folder:
 - **Final dashboard image:** [Final_Dashboard.png](Final_Dashboard.png).  
 - **Task brief image:** [Task Details.png](Task%20Details.png).  
 - **Kaggle source:** [Superstore Sales dataset](https://www.kaggle.com/datasets/rohitsahoo/sales-forecasting)
-
-> Ensure filenames are present in the task folder with exactly these names (case-sensitive on some systems).
-
----
-
-## Reproduce (quick steps)
-
-1. Open [RawData.xlsx](RawData.xlsx) and convert the data to an Excel Table named **`tblSales`**.  
-2. Apply the cleaning steps (normalize text, convert dates) and create helper columns described above. Save as [CleanedData.xlsx](CleanedData.xlsx).  
-3. Open [EDA.xlsx](EDA.xlsx). If pivots are disconnected, update their data source to `CleanedData.xlsx` (PivotTable Tools → Change Data Source).  
-4. Refresh All (Data → Refresh All). Validate slicer behavior and KPI card updates.  
-5. Re-export dashboard image if needed: `Final_Dashboard.png`.
 
 ---
 
