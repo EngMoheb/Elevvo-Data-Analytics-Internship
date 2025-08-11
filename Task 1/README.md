@@ -75,7 +75,7 @@ We added helper columns to enhance our analysis capabilities and ensure reliable
 
 - **Units Sold** — Sets each transaction line to `1` for reliable item counting in pivot tables, enabling accurate volume analysis alongside revenue trends.
 
-- **OrderDate_Real** — Converts all date entries to proper Excel date serials, ensuring date functions (YEAR, MONTH, TEXT) work correctly for time-based analysis.
+- **OrderDate** — Converts all date entries to proper Excel date serials, ensuring date functions (YEAR, MONTH, TEXT) work correctly for time-based analysis.
 
 - **Order Year** — Extracts integer years (2015, 2016, etc.) for quick year-over-year comparisons and annual trend analysis in pivot tables.
 
@@ -85,7 +85,7 @@ We added helper columns to enhance our analysis capabilities and ensure reliable
 
 - **Year–Month** — Combines year and month into a single timeline code (`yyyy-mm`) for seamless time series analysis and month-over-month calculations.
 
-These helper columns are the foundation that makes our analysis robust, repeatable, and scalable for new data or different analysis requirements.
+These helper columns are the foundation that makes our analysis robust, repeatable, and scalable for different analysis requirements.
 
 ---
 
@@ -93,50 +93,95 @@ These helper columns are the foundation that makes our analysis robust, repeatab
 
 **Excel sheet used:** [EDA.xlsx](EDA.xlsx)
 
-### Analysis 1: Revenue & Unit Sold Based on Region and Category Filter
+### Analysis 1: Revenue & Unit Sold Based on Region &  Category Filter
 ![Rev&Unit.png](Rev&Unit.png)
 
 #### Key Metrics Summary
 
 | Metric | Value |
 |--------|-------|
-| **Total Revenue** | $2,261,536.78 |
+| **Total Revenue** | $2,261,537 |
 | **Total Units Sold** | 9,800 units |
-| **Average Revenue per Unit** | $230.97 |
+| **Average Revenue per Unit** | $230.77 |
 
 #### Performance by Category
 
 | Category | Revenue | Units Sold | Revenue per Unit |
 |----------|---------|------------|------------------|
-| **Technology** | $827,455.87 | 1,813 | $456.32 |
-| **Furniture** | $728,658.58 | 2,078 | $350.69 |
-| **Office Supplies** | $705,422.33 | 5,909 | $119.39 |
+| **Technology** | $827,456 | 1,813 | $456.40 |
+| **Furniture** | $728,659 | 2,078 | $350.65 |
+| **Office Supplies** | $705,422 | 5,909 | $119.38 |
 
 #### Performance by Region
 
 | Region | Revenue | Units Sold | Revenue per Unit |
 |--------|---------|------------|------------------|
-| **West** | $710,219.68 | 3,140 | $226.21 |
-| **East** | $669,518.73 | 2,785 | $240.36 |
-| **Central** | $492,646.91 | 2,277 | $216.35 |
-| **South** | $389,151.46 | 1,598 | $243.58 |
+| **West** | $710,220 | 3,140 | $226.18 |
+| **East** | $669,519 | 2,785 | $240.40 |
+| **Central** | $492,647 | 2,277 | $216.36 |
+| **South** | $389,151 | 1,598 | $243.52 |
+
+
+### Category-Region Performance Matrix
+
+| Category | Region | Revenue | Units Sold | Revenue per Unit |
+|----------|--------|---------|------------|------------------|
+| Technology | East | $263,117 | 527 | $499.27 |
+| Technology | West | $247,405 | 589 | $420.04 |
+| Technology | Central | $168,739 | 408 | $413.58 |
+| Technology | South | $148,195 | 289 | **$512.79** |
+| Furniture | West | $245,348 | 691 | $355.06 |
+| Furniture | East | $206,461 | 591 | $349.34 |
+| Furniture | Central | $160,317 | 470 | $341.1 |
+| Furniture | South | $116,531 | 326 | $357.46 |
+| Office Supplies | West | $217,467 | 1,860 | $116.92 |
+| Office Supplies | East | $199,941 | 1,667 | $119.94 |
+| Office Supplies | Central | $163,590 | 1,399 | $116.93 |
+| Office Supplies | South | $124,425 | 983 | **$126.58** |
 
 #### Critical Business Insights
 
-**🎯 Technology Category Opportunity**: Technology generates highest margins ($456/unit) but represents only 18.5% of volume - significant expansion potential.
+**🎯 Technology Category Opportunity**: Technology generates the highest margins ($456/unit) but represents only 18.5% of volume - significant expansion potential.
 
 **📍 Regional Performance Gap**: South region significantly underperforms with only 16.3% of units and 17.2% of revenue despite competitive per-unit rates.
 
-**💡 Premium Market Success**: Technology in East region achieves $499/unit - the highest profitability combination, indicating strong market positioning.
-
 **⚖️ Volume vs. Margin Trade-off**: Office Supplies drives 60% of volume but only 31% of revenue, suggesting over-reliance on low-margin products.
 
-#### Business Recommendations
-1. **Technology Sales Expansion**: Launch targeted campaigns in West and East regions to capture high-margin volume
-2. **South Region Investigation**: Conduct market research to identify barriers and develop penetration strategies
-3. **Product Mix Optimization**: Gradually shift focus toward higher-margin Technology and Furniture categories
-4. **Regional Best Practices**: Replicate West region's success model in underperforming markets
+**💡 Premium Market Success**: Technology in the East region achieves $499/unit - the highest profitability combination, indicating strong market positioning.
 
+  **🌟 West Region Market Leadership**: The West region dominates both volume (32% of units) and revenue (31% of total), suggesting successful market strategies that could be replicated in other regions.
+
+ **⚡Technology-South Premium Pricing**: Technology products in the South region command the highest revenue per unit ($512.78), indicating strong market demand but limited volume penetration.
+
+#### Business Recommendations
+1. **Technology Sales Acceleration Program**
+   - Launch targeted marketing campaigns in the West and East regions to increase Technology category volume
+   - Implement sales incentives for Technology products
+   - **Expected Impact:** 15-20% increase in Technology units sold
+
+2. **South Region Market Penetration Strategy**
+   - Conduct market research to identify barriers in South region
+   - Develop region-specific promotional campaigns
+   - Consider strategic partnerships or distribution channel expansion
+   - **Expected Impact:** 25% increase in South region sales volume
+
+3.**Portfolio Optimization Strategy**
+   - Gradually shift product mix toward higher-margin categories (Technology/Furniture)
+   - Introduce premium Office Supplies lines to improve category margins
+   - **Expected Impact:** 10-15% improvement in overall profit margins
+
+4.**Best Practice Replication Program**
+   - Analyze West region's success factors and implement in Central and South regions
+   - Cross-regional knowledge sharing and training programs
+   - **Expected Impact:** 20% revenue increase in underperforming regions
+
+## Success Metrics to Monitor
+
+- **Revenue per Unit** by category and region
+- **Market Share Growth** in South region
+- **Technology Category Volume Growth** across all regions
+- **Overall Profit Margin Improvement**
+- **Regional Revenue Distribution Balance**
 ---
 
 ### Analysis 2: Revenue Monthly Trend
