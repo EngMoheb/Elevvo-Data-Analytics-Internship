@@ -1,6 +1,6 @@
 # Superstore Sales Performance Excel Dashboard 
 ![Superstore cover image](Superstore.jpg)
-
+r
 ---
 
 ## Story (quick)
