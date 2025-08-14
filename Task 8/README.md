@@ -32,6 +32,33 @@ Our adventure began with the ubiquitous **Superstore Sales dataset** from Kaggle
 
 ## 🔍 Visual Analytics Journey
 
+
+## Milestone Insights Log (summary)
+
+### KPIs — Executive Cards (2025-08-14)
+- **Total Revenue (displayed):** ~$2,000,000  
+  - *Validation note:* canonical sum across segments = **$2,261,537** when using full numeric precision.
+- **Total Orders:** ~5,000  
+- **Total Customers:** 793  
+- **Total Units:** ~10,000  
+- **Average Order Value (AOV):** $459.48
+
+**Top products (by revenue)**
+- Phones — $327,782  
+- Chairs — $322,823  
+- Storage — $219,343  
+- Tables — $202,811  
+- Binders — $200,029
+
+**Sales by Region**
+- West — $710,220  
+- East — $669,519  
+- Central — $492,647  
+- South — $389,151
+
+*Action:* These KPI cards form the **KPIs** visual and are the executive entry point for the report. Use full-precision totals when validating; rounded display is acceptable for executive audiences.
+
+
 ### Visual 1: Customer Segment Deep-Dive 
 *"Who are our customers, and what drives their purchasing behavior?"*
 
