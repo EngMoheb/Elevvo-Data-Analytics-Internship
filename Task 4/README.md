@@ -1,309 +1,114 @@
-# 🗂️ Data Cleaning & Preparation Project – Kaggle Data Science & ML Survey
+# 🗂️ Data Cleaning & Insight Generation from Survey Data
 
-## 📖 Project Story – Before the Cleaning Began
+## 📖 Project Story
 
 ### 1. The Beginning
 
-This journey started with a deceptively simple-looking dataset — the Kaggle Data Science & ML Survey (covering 2017–2021). At first glance, it looked like a goldmine of insights waiting to be unlocked. But as soon as we peeked under the hood, we realized we weren't just mining for insights — we'd need to do serious excavation before we could even start exploring.
+We started with the Kaggle Data Science & ML Survey (2017–2021) — a huge, messy, wide dataset that looked like a goldmine but needed serious preparation before any insights could be extracted.
 
-**The mission was clear:**
+**Goal:** Make the dataset clean, consistent, and analysis‑ready — then perform EDA on each cleaned block to extract meaningful insights.
 
-Take this massive, messy, wide survey dataset and make it clean, consistent, and analysis-ready — while documenting every step so anyone could reproduce or audit the process later.
+### 2. The Data
 
-### 2. Meet the Data
+**Source:** Kaggle Data Science & ML Survey 2017–2021
 
-- **Source:** Kaggle Data Science & ML Survey
-- **Original Rows:** 101,846 unique entries (after removing 4,456 duplicates)
-- **Original Columns:** ~300 (exact expected count before cleaning: 293)
-- **Format:** Multi-choice survey → one column per option
+**Original Rows:** 101,846 (after removing 4,456 duplicates)
 
-**Challenges spotted immediately:**
+**Original Columns:** ~293 before cleaning
 
-- Many blank or all-null columns causing Excel/Power Query to choke
-- Inconsistent column naming (mixed casing, cryptic codes like `Q1_Part_1`)
-- Performance slowdowns due to extreme dataset width
-- "None" / "Other" answer columns scattered throughout
-- Missing survey questions Q28–Q30 in original data
+**Format:**
+- Multi‑choice → one column per option
+- Single‑choice → one column per question
 
-### 3. The First Strategic Moves
+**Initial challenges:**
+- Many blank/all‑null columns slowing Power Query & Excel
+- Inconsistent naming (mixed casing, cryptic codes like Q1_Part_1)
+- "None" / "Other" columns scattered in multiple formats
+- Missing questions Q28–Q30 in source
 
-Rather than try to clean all ~300 columns at once, we decided to split the dataset into smaller, logical files to make the work lighter and more systematic. We also wanted to group similar structures together — especially "paired" questions — so we could apply consistent transformations without fear of breaking unrelated data.
+### 3. Our Approach
 
-### 4. The Data Separation Plan
+1. Split the dataset into smaller files for speed and clarity.
 
-We ended up with 5 smaller files, each representing a theme or block of questions:
+2. Clean each file separately:
+   - **Labeling** → for multi‑answer questions: Convert 0 to "Not Selected" and 1 to "Selected" for non‑technical stakeholders. Example: In Q7 (Programming Languages), 1 under "Lang: Python" = Selected, 0 = Not Selected.
+   - **Mapping** → for single‑answer questions: map raw values to clear categories. Example: "United States of America" → "United States".
+   - **Basic cleaning** → trim/remove extra spaces, fix casing, correct encoding issues.
+   - **Data types** → set each field correctly (Text, Number, Date).
+
+3. Export each cleaned file into an Excel workbook.
+
+4. **EDA per sheet** — each cleaned sheet gets its own exploratory analysis to extract insights without slowing Excel by merging all data at once.
+
+5. Document every change in simple, plain language so it's easy to follow and reproduce.
+
+### 4. File Separation Plan
 
 | File # | Contents |
 |--------|----------|
-| 1 | **Demographics & General Q** → Demographics + Questions 1-6 |
-| 2 | **Questions 7-15** |
-| 3 | **Questions 16-26** |
-| 4 | **Current vs Future (Paired structure)** → Q27, Q32, Q34, Q36, Q37, Q38 — two parts each ("Current Use" and "Future Interest"), with Q28–Q30 missing from source |
-| 5 | **Questions 31, 33, 35, 39, 40, 41, 42** |
-
-**Why split like this?**
-
-✅ Faster handling in Power Query & Excel  
-✅ Easier to apply consistent cleaning rules within each block  
-✅ Special handling for "paired" questions without affecting the rest
+| 1 | Demographics & General Questions (Q1–Q6) |
+| 2 | Questions 7–15 |
+| 3 | Questions 16–26 |
+| 4 | Paired "Current vs Future" (Q27, Q32, Q34, Q36, Q37, Q38) — with Q28–Q30 missing |
+| 5 | Q31, Q33, Q35, Q39–Q42 |
 
 ### 5. Special Handling for Paired Questions
 
-The **Current vs Future** set (File 4) is special because each question appears in two parts, with identical answer options:
-
-- **Part 1:** Tools/tech currently used regularly
-- **Part 2:** Tools/tech the respondent wants to learn in the next 2 years
-
-These will be kept in the same sheet, but cleaned with mirrored naming conventions (e.g., `_Now` / `_Future` suffixes). This will make later Power BI visualizations simple and accurate.
-
-### 6. Pre-Cleaning Agreements
-
-Before touching any values, we defined the core rules we'll follow in the cleaning phase:
-
-- **Use a mapping table for renaming** → no manual header edits, all documented
-- **Standardize data types** → match field purpose (Text, Number, Date)
-- **Handle "None" & "Other"** → consistent prefixes or drop if redundant
-- **Tackle missing data strategically** → distinguish between true skips and accidental blanks
-- **Document everything** in a change log with the file name as the header
-- **Validate final merged file** → must have exactly 293 columns after recombining
-
-### 7. Validation Check Plan – Column Count
-
-**Before cleaning, we will:**
-
-1. Load original downloaded dataset → confirm column count = 293
-2. If count differs, investigate before proceeding (check export completeness, hidden columns, or mismatched source)
-
-### 8. What Happens Next
-
-With the strategy locked, we're ready to:
-
-1. **Clean each of the 5 files separately** using the agreed rules
-2. **Keep a living change log** so the documentation tells the full story from raw → clean
-3. **Merge all files back** into one master dataset
-4. **Run validation** to ensure structure matches the original (but cleaner)
-
-The next commit in this project will mark the start of the **Cleaning Phase** — where we tame the chaos and shape this into a dataset ready for powerful exploratory analysis.
-
----
-
-> 💡 **Note:** This section is "before cleaning" — the story will be expanded with detailed cleaning logs and transformations as each file is processed.
-
-## Project Structure
-
-```
-📁 kaggle-survey-data-cleaning/
-├── 📄 README.md                    # This documentation
-├── 📁 raw-data/                    # Original dataset files
-├── 📁 split-files/                 # 5 separated file groups
-│   ├── file1_demographics_q1-6.csv
-│   ├── file2_q7-15.csv
-│   ├── file3_q16-26.csv
-│   ├── file4_current-future-paired.csv
-│   └── file5_remaining-questions.csv
-├── 📁 cleaned-data/                # Final clean datasets
-├── 📁 documentation/               # Cleaning logs & mapping tables
-└── 📁 validation/                  # Data quality checks
-```
-
-
-## Contributing
-
-This project follows a systematic, documented approach to data cleaning. If you'd like to contribute:
-
-- Follow the established naming conventions
-- Document all changes in the appropriate log files
-- Ensure validation checks pass before submitting changes
-
----
-
-# Sheet Cleaning Log — Geographic & General Questions
-
-**Source:** Kaggle Data Science Survey (2017–2021) — Geographic & General Questions tab
-
----
-
-## 1. Objective
-
-Standardize, map, and validate key demographic and general survey fields to ensure:
-
-- **Clarity** for dashboards and storytelling
-- **Reproducibility** for future ETL runs
-- **Business-friendly categories** for decision-makers
-
----
-
-## 2. Actions Taken
-
-### Geographic Fields
-
-#### Country
-- Bulk-replaced inconsistent spellings and variants via mapping table (e.g., "United States of America" → "United States")
-- Corrected casing and encoding for non-Latin scripts
-- Logged all original → clean replacements in ETL documentation
-
-### Demographic & General Fields
-
-#### Education
-- Removed encoding issues and excess whitespace
-- Standardized into clear academic categories:
-  - High School
-  - Associate degree
-  - Bachelor's degree
-  - Master's degree
-  - Doctoral degree
-
-#### Years Coding
-- Normalized varied range formats into ordered bands:
-  - `<1 year`
-  - `1–2 years`
-  - `3–5 years`
-  - `6–9 years`
-  - `10+ years`
-  - `20+ years`
-- Retained "20+ years" as a separate top category for experience-band analysis
-
-#### Career Stage (derived from age ranges)
-- Grouped raw age responses into consolidated stages:
-  - **Junior**
-  - **Mid**
-  - **Senior**
-  - **Expert**
-- Ensured grouping rules are explicit in mapping table
-
-#### Gender (Binary)
-- Standardized values to "Male" / "Female" for binary analysis while retaining original text in reference column for inclusivity
-- Removed extra spaces, fixed inconsistent casing
-
-### Survey Meta
-
-#### Duration (minutes)
-- Converted raw completion time from seconds to minutes (rounded to two decimals)
-- Flagged and filtered out extreme outliers (e.g., >180 minutes) as non-representative
-- Documented null-handling policy: missing durations kept as blanks for transparency
-
----
-
-## 3. Validation Steps
-
-- ✅ Ran before/after uniques check for all categorical fields (see summary table below)
-- ✅ Cross-verified that mapping tables covered 100% of pre-cleaned values
-- ✅ Checked that transformed data matched expected category order for dashboard visuals
-
----
-
-## 4. Before/After Unique Values — Summary
-
-| Field | Unique Values Before Cleaning | Unique Values After Cleaning |
-|-------|------------------------------|------------------------------|
-| **Country** | Mixed spellings, abbreviations, casing | Standardized title-case country names |
-| **Education** | Multiple phrasings & encoding issues | 5 clean academic categories |
-| **Years Coding** | Mixed symbols, text ranges, numeric values | Ordered, consistent bands |
-| **Career Stage** | Age ranges in years | Grouped into 4 career stages |
-| **Gender (Binary)** | Variations of male/female, mixed case | Male / Female |
-| **Duration (minutes)** | Raw seconds, blanks | Rounded minutes, outliers flagged |
-
----
-
-## 5. Business Impact
-
-### ✅ Clarity
-No need for last-minute manual edits before analysis
-
-### ✅ Scalability
-Mapping tables make adding new survey years effortless
-
-### ✅ Traceability
-Each transformation decision is recorded for reproducibility
-
----
-
-## Files Modified
-
-```
-📁 cleaned-data/
-├── geographic_general_questions_cleaned.csv
-📁 documentation/
-├── country_mapping_table.csv
-├── education_mapping_table.csv
-├── coding_experience_mapping_table.csv
-├── career_stage_mapping_table.csv
-└── gender_mapping_table.csv
-```
-
-## Quality Metrics
-
-| Metric | Result |
-|--------|--------|
-| **Data Completeness** | 98.7% (missing values documented) |
-| **Mapping Coverage** | 100% (all original values mapped) |
-| **Validation Checks** | ✅ All passed |
-| **Outliers Handled** | 342 extreme duration values flagged |
-
----
-
-## Next Steps
-
-1. **Integration** with other cleaned sheet files
-2. **Final validation** of merged dataset
-3. **Dashboard preparation** with clean, consistent categories
-
----
-
-**Status:** 🚧 Pre-Cleaning Phase Complete | Next: Data Cleaning Implementation
-
-
-the 7215 sheet
-
-
-
-# 🗂️ Documentation Notes — Data Cleaning & Transformation
-
-## 1. **Labeling**
-
-* All categorical survey fields were mapped to **human-readable labels** for clarity in analysis and dashboards.
-* Original coded column names (e.g., `"7_Lang_Reg_SQL"`) were transformed using a **centralized mapping record** in M to bulk-rename them without altering the raw source.
-
-### **M Code snippet for labeling:**
+In File 4:
+- Each question has two versions — Current use and Future interest.
+- Cleaned with mirrored naming (_Now / _Future) for clarity.
+
+## 🚀 Cleaning Phase
+
+### Sheet 1 — Demographic & General (Q1–Q6)
+*(check the worksheet here)*
+
+**Actions Taken:**
+- **Headers:** Renamed via mapping table; removed survey question text from first row.
+- **Country:** Standardized spelling/casing.
+- **Education:** Mapped to categories (Bachelor's, Master's, Doctoral, Professional, No education/degree, College).
+- **Years Coding:** Normalized into ordered bands.
+- **Career Stage:** Derived from age ranges → Junior, Mid, Senior, Expert.
+- **Gender:** Standardized to "Male" / "Female" for binary analysis; original kept for reference.
+- **Job Title:** Trimmed spaces, corrected casing, validated against role list.
+- **Duration:** Converted seconds to rounded minutes; flagged extreme outliers.
+
+### Sheet 2 — Questions 7–15
+*(check the worksheet here)*
+
+**Summary:**
+- **Headers:** Renamed via mapping table; survey text row removed.
+- Contains single‑answer and multi‑answer questions.
+- **Single‑answer columns (mapped):** [list columns here] — mapped raw responses into clean categories.
+- **Multi‑answer columns (labeled):** [list columns here] — converted 0 to "Not Selected" and 1 to "Selected" for readability.
+
+**Example labeling logic in Power Query:**
 
 ```powerquery
-// Define mapping of old column names to new friendly labels
 LabelMap = [
-    #"7_Lang_Reg_SQL" = "Lang: SQL",
-    #"7_Lang_Reg_Java" = "Lang: Java",
-    // …mapping continues for all relevant columns
+    #"Q7_Python" = "Lang: Python",
+    #"Q7_SQL"    = "Lang: SQL"
 ],
-
-// Rename only columns that actually exist in the current dataset
-ExistingCols = List.Intersect({Table.ColumnNames(PreviousStep), Record.FieldNames(LabelMap)}),
-RenamePairs = List.Transform(ExistingCols, each {_, Record.Field(LabelMap, _)}),
-RenamedCols = Table.RenameColumns(PreviousStep, RenamePairs)
+Existing = List.Intersect({Record.FieldNames(LabelMap), Table.ColumnNames(PreviousStep)}),
+Pairs = List.Transform(Existing, each {_, Record.Field(LabelMap, _)}),
+Renamed = Table.RenameColumns(PreviousStep, Pairs, MissingField.Ignore)
 ```
 
-* This approach:
-   * Keeps the rename logic in **one place** for easy maintenance.
-   * Skips missing columns automatically — avoiding refresh errors in multi-year data.
-   * Improves stakeholder comprehension in dashboards without losing traceability in the raw data.
+**CPU Column Issue (Simplified):**
+- In the raw data, the "CPU" column came in blank for all rows.
+- We traced it to an import mismatch where the column header didn't match the expected name, so Power Query pulled it in as null.
+- **Fix:** Created a new column that correctly pulled CPU values from the right source field, replacing nulls where applicable.
 
-## 2. **Mapping**
+## 📊 EDA (to be filled after analysis)
 
-* Binary encoding applied to multi-select columns (0 = not selected, 1 = selected) with **column-aware rules**:
-   * `*_None` → 1 if the respondent explicitly indicated "None" or equivalent.
-   * `*_Other` → 1 if the respondent indicated "Other".
-   * All other selection columns → 1 if any valid value present, else 0.
-* Ambiguous `"Personal computer"` response mapped to **Desktop** for consistency; rationale noted in mapping file.
+Here we will describe how we perform EDA for this sheet:
+- Explore both selected (1) and not selected (0) counts.
+- Use pivot tables to summarise by question and compare answers.
+- Highlight top categories and unusual patterns.
 
-## 3. **CPU Column Issue & Resolution**
+## 📈 Analyzing the Insights (to be filled after EDA)
 
-### **Problem**
-* `12_HW_CPUs` initially produced all 0s in `FlaggedCPU`.
-* Cause: An early null-filter step removed entire rows with no CPU value, altering dataset size and breaking match logic.
-
-### **Fix**
-* Removed null-filter; kept all rows.
-* Replaced null/blank with empty string before mapping.
-* Expanded match logic from exact tokens (`CPU`, `CPUS`, `DUAL CPU`) to include substring matches like `"Intel CPU"`.
-
-### **Outcome**
-* Row counts stable from source to export.
-* `FlaggedCPU` correctly identifies relevant records without losing non-CPU respondents.
+Once EDA is complete, this section will capture:
+- Key trends in Q7–Q15
+- Notable differences between years
+- High‑frequency vs low‑frequency answer options
