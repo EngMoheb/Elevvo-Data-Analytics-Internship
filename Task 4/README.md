@@ -251,3 +251,59 @@ Each transformation decision is recorded for reproducibility
 ---
 
 **Status:** 🚧 Pre-Cleaning Phase Complete | Next: Data Cleaning Implementation
+
+
+the 7215 sheet
+
+
+
+# 🗂️ Documentation Notes — Data Cleaning & Transformation
+
+## 1. **Labeling**
+
+* All categorical survey fields were mapped to **human-readable labels** for clarity in analysis and dashboards.
+* Original coded column names (e.g., `"7_Lang_Reg_SQL"`) were transformed using a **centralized mapping record** in M to bulk-rename them without altering the raw source.
+
+### **M Code snippet for labeling:**
+
+```powerquery
+// Define mapping of old column names to new friendly labels
+LabelMap = [
+    #"7_Lang_Reg_SQL" = "Lang: SQL",
+    #"7_Lang_Reg_Java" = "Lang: Java",
+    // …mapping continues for all relevant columns
+],
+
+// Rename only columns that actually exist in the current dataset
+ExistingCols = List.Intersect({Table.ColumnNames(PreviousStep), Record.FieldNames(LabelMap)}),
+RenamePairs = List.Transform(ExistingCols, each {_, Record.Field(LabelMap, _)}),
+RenamedCols = Table.RenameColumns(PreviousStep, RenamePairs)
+```
+
+* This approach:
+   * Keeps the rename logic in **one place** for easy maintenance.
+   * Skips missing columns automatically — avoiding refresh errors in multi-year data.
+   * Improves stakeholder comprehension in dashboards without losing traceability in the raw data.
+
+## 2. **Mapping**
+
+* Binary encoding applied to multi-select columns (0 = not selected, 1 = selected) with **column-aware rules**:
+   * `*_None` → 1 if the respondent explicitly indicated "None" or equivalent.
+   * `*_Other` → 1 if the respondent indicated "Other".
+   * All other selection columns → 1 if any valid value present, else 0.
+* Ambiguous `"Personal computer"` response mapped to **Desktop** for consistency; rationale noted in mapping file.
+
+## 3. **CPU Column Issue & Resolution**
+
+### **Problem**
+* `12_HW_CPUs` initially produced all 0s in `FlaggedCPU`.
+* Cause: An early null-filter step removed entire rows with no CPU value, altering dataset size and breaking match logic.
+
+### **Fix**
+* Removed null-filter; kept all rows.
+* Replaced null/blank with empty string before mapping.
+* Expanded match logic from exact tokens (`CPU`, `CPUS`, `DUAL CPU`) to include substring matches like `"Intel CPU"`.
+
+### **Outcome**
+* Row counts stable from source to export.
+* `FlaggedCPU` correctly identifies relevant records without losing non-CPU respondents.
