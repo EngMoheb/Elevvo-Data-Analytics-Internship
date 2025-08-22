@@ -130,16 +130,73 @@ Renamed = Table.RenameColumns(PreviousStep, Pairs, MissingField.Ignore)
 - We traced it to an import mismatch where the column header didn't match the expected name, so Power Query pulled it in as null.
 - **Fix:** Created a new column that correctly pulled CPU values from the right source field, replacing nulls where applicable.
 
-## 📊 EDA (to be filled after analysis)
+# Exploratory Data Analysis & Insights 
 
-Here we will describe how we perform EDA for this sheet:
-- Explore both selected (1) and not selected (0) counts.
-- Use pivot tables to summarise by question and compare answers.
-- Highlight top categories and unusual patterns.
+## Q8 – Preferred Programming Language to Learn First
 
-## 📈 Analyzing the Insights (to be filled after EDA)
+### EDA:
+- Python overwhelmingly leads with **78.6%** of respondents recommending it as the first language to learn.
+- R (10.6%) and SQL (5.1%) trail far behind.
 
-Once EDA is complete, this section will capture:
-- Key trends in Q7–Q15
-- Notable differences between years
-- High‑frequency vs low‑frequency answer options
+### Insights:
+- Python's dominance suggests it is perceived as the most versatile and accessible entry point for programming, especially in data science and analytics.
+- R's niche appeal aligns with statistical and academic use cases, while SQL's lower ranking reflects its role as a complementary rather than primary language.
+- Training programs and beginner resources should prioritize Python, with optional tracks for R and SQL.
+
+## Q9 – Distribution of Preferred IDEs
+
+### EDA:
+- **Jupyter** leads with 41.5k selections, followed by **VS Code** (27.1k) and **PyCharm** (23.9k).
+- RStudio (21.6k) and Notepad++ (18.2k) form the mid‑tier.
+- Other IDEs have smaller but notable user bases.
+
+### Insights:
+- Jupyter's lead reflects its integration with Python and suitability for exploratory, notebook‑based workflows.
+- VS Code's strong showing indicates a growing preference for lightweight, extensible editors.
+- Tooling support and documentation should focus on Jupyter and VS Code, with PyCharm as a key secondary environment.
+
+## Q11 – Primary Computing Platforms
+
+### EDA:
+- Desktop (18.3k) and laptop (16.2k) dominate usage.
+- Other platforms (workstations, "Platform" category, and miscellaneous) are far less common.
+
+### Insights:
+- Development and deployment strategies should assume desktop/laptop as the primary environment.
+- Optimization for less common platforms may have limited ROI unless targeting specialized user groups.
+
+## Q13 – Frequency of [Activity] Participation
+
+### EDA:
+- "Never" is the most common response (40k), followed by occasional participation (2–5 times: 6.5k; once: 6.2k).
+- High‑frequency participation (>25 times) is rare.
+
+### Insights:
+- The activity has low penetration among respondents, suggesting either low awareness, low perceived value, or high barriers to entry.
+- Engagement strategies should focus on converting "Never" respondents into occasional participants through awareness campaigns or low‑commitment entry points.
+
+## Q15 – Frequency of Machine Learning Usage
+
+### EDA:
+- Most respondents use ML infrequently: <1 time (26.9k) or 1–2 times (16.8k).
+- A significant group (6.0k) has never used ML.
+- Heavy users (10+ times) are a small minority.
+
+### Insights:
+- ML adoption is still in early stages for the majority, with a long tail of occasional users.
+- Training and tooling should target the "low‑frequency" segment to accelerate adoption.
+- Advanced ML resources should be reserved for the smaller, high‑engagement group.
+
+---
+
+## Executive Summary – Section Q8–Q15
+
+- **Python is the clear entry point** for programming, recommended by nearly 4 out of 5 respondents, with R and SQL far behind. This reinforces a Python‑first training and onboarding strategy.
+
+- **Jupyter and VS Code dominate the IDE landscape**, reflecting a preference for flexible, lightweight, and Python‑friendly environments. PyCharm remains a strong third choice for more structured development.
+
+- **Desktop and laptop usage is near‑universal**, simplifying environment standardization and reducing the need for platform‑specific adaptations.
+
+- **Engagement gaps are evident** in both Q13 and Q15: large "Never" or "Low‑frequency" segments highlight untapped potential for participation in the surveyed activities and for machine learning adoption.
+
+- **Adoption strategies should focus on conversion**, moving low‑engagement respondents into occasional or regular users through targeted awareness, accessible resources, and low‑barrier entry points.
