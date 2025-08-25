@@ -61,7 +61,6 @@ In File 4:
 ## 🚀 Cleaning Phase
 
 ### Sheet 1 — Demographic & General (Q1–Q6)
-*(check the worksheet here)*
 
 **Actions Taken:**
 - **Headers:** Renamed via mapping table; removed survey question text from first row.
@@ -105,7 +104,6 @@ In File 4:
 --------------------
 
 ### Sheet 2 — Questions 7–15
-*(check the worksheet here)*
 
 **Summary:**
 - **Headers:** Renamed via mapping table; survey text row removed.
