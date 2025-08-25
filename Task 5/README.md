@@ -282,7 +282,7 @@ ORDER BY month;
 
 ## 📊 Advanced EDA Queries
 
-### Query 5 — Revenue by Country (Enhanced)
+### Query 5 — Revenue by Country 
 
 **Purpose:** Identify top-performing countries by total sales to guide market prioritization.
 
@@ -326,7 +326,7 @@ LIMIT 20;
 | Belgium | $37.62 |
 | Poland | $37.62 |
 
-### Query 6 — Top 10 Tracks by Revenue (Simplified)
+### Query 6 — Top 10 Tracks by Revenue 
 
 ```sql
 SELECT 
