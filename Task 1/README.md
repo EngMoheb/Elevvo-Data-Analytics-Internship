@@ -18,7 +18,6 @@ Imagine you're handed thousands of messy sales transactions and asked to turn th
 - [Helper Columns](#helper-columns)  
 - [Exploratory Data Analysis](#exploratory-data-analysis)  
 - [Interactive Dashboard](#interactive-dashboard)  
-- [Key Business Insights](#key-business-insights)  
 - [Lessons Learned](#lessons-learned)  
 - [Project Files & Links](#project-files--links)  
 - [Contact](#contact)
@@ -40,7 +39,7 @@ The raw data captured orders across regions, categories and years. It required c
 
 ## Data Cleaning Journey
 
-> Clean data = trustworthy analysis. Cleaning was the foundation, not an afterthought.
+> Cleaning was the foundation, not an afterthought.
 
 ![Cleaned data snapshot](DataCleaned.png)
 
@@ -69,7 +68,7 @@ The raw data captured orders across regions, categories and years. It required c
 
 ## Helper Columns
 
-We added helper columns to enhance our analysis capabilities and ensure reliable pivot table operations. These columns transform the raw data into analysis-ready format and enable sophisticated time-based calculations.
+We added helper columns to enhance our analysis capabilities and ensure reliable pivot table operations. These columns transform the raw data into an analysis-ready format.
 
 ### Essential Helper Columns for Analysis:
 
@@ -84,9 +83,7 @@ We added helper columns to enhance our analysis capabilities and ensure reliable
 - **Month Num** — Provides numeric months (1–12) to enable proper chronological sorting in pivot tables (preventing alphabetical month ordering).
 
 - **Year–Month** — Combines year and month into a single timeline code (`yyyy-mm`) for seamless time series analysis and month-over-month calculations.
-
-These helper columns are the foundation that makes our analysis robust, repeatable, and scalable for different analysis requirements.
-
+  
 ---
 
 ## Exploratory Data Analysis
