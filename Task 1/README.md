@@ -1,4 +1,4 @@
-# Superstore Sales Performance Excel Dashboard 
+# Superstore Sales Performance Analysis & Trends ( Excel )     
 ![Superstore cover image](Superstore.jpg)
 
 ---
@@ -18,8 +18,7 @@ Imagine you're handed thousands of messy sales transactions and asked to turn th
 - [Helper Columns](#helper-columns)  
 - [Exploratory Data Analysis](#exploratory-data-analysis)  
 - [Interactive Dashboard](#interactive-dashboard)  
-- [Lessons Learned](#lessons-learned)  
-- [Project Files & Links](#project-files--links)  
+- [Lessons Learned](#lessons-learned)   
 - [Contact](#contact)
 
 ---
@@ -320,8 +319,8 @@ We added helper columns to enhance our analysis capabilities and ensure reliable
 ### Analysis 5: Year-over-Year (YoY) Revenue Growth Analysis
 ![YoY.png](YoY.png)
 
-#### Annual Growth Trajectory
-# Annual Growth Trajectory
+
+# Annual Growth 
 
 | Year | Total Revenue | YoY Growth Rate | Growth Stage |
 |------|---------------|-----------------|--------------|
@@ -352,44 +351,6 @@ We added helper columns to enhance our analysis capabilities and ensure reliable
 2. **Leverage Recovery Playbook**: Capture the factors that drove the 2017 rebound and replicate in other product lines/regions.
 3. **Sustain Moderate Growth**: Aim for 15–20% annual growth as the business matures, focusing on margin improvement alongside revenue.
 4. **Scenario Planning**: Prepare for market shifts that could slow growth further — diversify product/service portfolio.
-
-# Moving Forward: Action Plan for Stakeholders
-
-## Right Away (next 0–6 months)
-
-* Find quick revenue wins to smooth out any seasonal dips.
-* Lock in the good habits and strategies that helped the big recovery in 2017.
-* Keep an eye on competitors so there are no surprise losses like in 2016.
-
-## Next Steps (6–18 months)
-
-* Grow into new markets that have similar traits to the ones where we've already succeeded.
-* Build up steady, repeatable income so growth is less bumpy year to year.
-* Fine-tune prices and focus more on products or services with the best profit margins.
-
-## Long-Term Plan (18+ months)
-
-* Aim for steady double‑digit growth each year by balancing expansion with improving efficiency.
-* Use the proven ability to bounce back from a bad year as a selling point to investors and partners.
-* Set up systems that can handle dips without hurting the long‑term plan.
-
-# Key Things to Measure
-
-## Revenue Goals
-
-* Keep yearly growth between **15–20%**.
-* Make sure yearly revenue never falls below $500k.
-* Try to avoid having more than 1 "down year" in every 4 years.
-
-## Operations Goals
-
-* Keep the company nimble and ready to react if things start to drop.
-* Make more profit from the same sales volume.
-* Track performance by product and by region so issues are caught early.
-
-# Executive Summary
-
-From 2015 to 2018, revenue grew **50.5%** in total, with a **14.6% average yearly growth rate**. There was a **small drop in 2016**, followed by a **big comeback in 2017**, and continued steady growth in 2018. The main takeaway: the business can recover from setbacks, keep growing, and has a strong base to build on. The focus going forward should be **steady growth**, **avoiding big dips**, and **getting more profit from what's already working**.---
 
 ## Interactive Dashboard
 ![Final Dashboard](Final_Dashboard.png)
@@ -431,19 +392,6 @@ From 2015 to 2018, revenue grew **50.5%** in total, with a **14.6% average yearl
 - **Excel is a powerful BI tool.** Tables + helper columns + pivot + slicers rapidly produce interactive dashboards.  
 - **Use MoM & YoY together.** MoM for momentum; YoY for seasonally-adjusted growth.  
 - **Keep dashboards simple.** Focused KPIs and annotated charts communicate fastest.
-
----
-
-## Project Files & Links
-
-- **Raw data:** [RawData.xlsx](RawData.xlsx) — original dataset.  
-- **Cleaned data:** [CleanedData.xlsx](CleanedData.xlsx) — cleaned table `tblSales`.  
-- **EDA & Dashboard workbook:** [EDA.xlsx](EDA.xlsx).  
-- **Final dashboard image:** [Final_Dashboard.png](Final_Dashboard.png).  
-- **Task brief image:** [Task Details.png](Task%20Details.png).  
-- **Kaggle source:** [Superstore Sales dataset](https://www.kaggle.com/datasets/rohitsahoo/sales-forecasting)
-
----
 
 ## Contact
 
