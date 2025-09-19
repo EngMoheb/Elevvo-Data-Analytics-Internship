@@ -34,17 +34,9 @@ We started with a single `Chinook.sqlite` database containing 11 interrelated ta
 
 ### Prerequisites for Success:
 
-- PostgreSQL (any recent version)
-- pgAdmin or VS Code with PostgreSQL extension
+- PostgreSQL
+- VS Code with PostgreSQL extension
 - CSV files accessible to the PostgreSQL server
-- Proper permissions for file operations
-
-### Key Configuration Note:
-If CSV files use DD-MM-YY date formats, set:
-```sql
-SET datestyle = 'DMY';
-```
-before importing to avoid date parsing errors.
 
 ## 🏗️ Building the Foundation: Database Schema
 
@@ -57,8 +49,6 @@ We designed our schema to reflect the relationships in a real music business:
 - **Invoices** contain **InvoiceLines**
 - **Employees** support customers and manage sales
 
-*(Full schema creation script is preserved for reproducibility.)*
-
 ## 🚛 The Great Migration: CSV Import
 
 With the schema ready, we bulk-imported the CSVs into PostgreSQL using `COPY`, handling date formats with `SET datestyle = 'DMY'`. This step brought all historical Chinook data into our new relational structure.
@@ -68,7 +58,7 @@ With the schema ready, we bulk-imported the CSVs into PostgreSQL using `COPY`, h
 Before analysis, we ensured the data was consistent and trustworthy:
 
  ```sql
-/* 1) Clean Date/Time Anomalies
+1) Clean Date/Time Anomalies
       - Any invoice dates outside the range 2000-01-01 to today 
         are considered invalid and set to NULL */
 UPDATE "Invoice"
@@ -76,7 +66,7 @@ UPDATE "Invoice"
  WHERE "InvoiceDate" < DATE '2000-01-01'
     OR "InvoiceDate" > CURRENT_DATE;
 
-sql /* 2) Identify Orphaned Foreign-Key Records
+2) Identify Orphaned Foreign-Key Records
       - Tracks without a linked album
       - InvoiceLines without a valid Track reference */
 -- Tracks missing AlbumId
@@ -90,13 +80,13 @@ SELECT il.*
   LEFT JOIN "Track" t ON il."TrackId" = t."TrackId"
  WHERE t."TrackId" IS NULL;
 
-/* 3) Standardize Text Columns
+ 3) Standardize Text Columns
       - Trim leading/trailing spaces
       - Capitalize each word in the Country field */
 UPDATE "Customer"
    SET "Country" = INITCAP(TRIM("Country"));
 
-/* 4) Validate Numeric Fields
+ 4) Validate Numeric Fields
       - Identify any UnitPrice ≤ 0 or Quantity ≤ 0 */
 SELECT *
   FROM "InvoiceLine"
@@ -109,9 +99,7 @@ SELECT *
 - ✅ **Standardized text** → Country names cleaned and variants unified (USA, United States, U.S.A. → USA)
 - ✅ **Referential integrity** → Checked for orphaned tracks, missing invoices, or broken foreign keys
 - ✅ **Business rule checks** → Flagged unit prices or quantities ≤ 0
-
-We also created a data changes audit table to track every transformation for transparency and reproducibility.
-
+  
 ## 🔍 The Discovery Phase: Analysis Queries
 
 With clean data in place, we wrote targeted SQL queries to answer the business questions.
@@ -230,7 +218,7 @@ ORDER BY total_revenue DESC;
 
 | country | total_revenue | pct_of_total |
 |---------|---------------|--------------|
-| Usa | $523.06 | 22.46% |
+| USA | $523.06 | 22.46% |
 | Canada | $303.96 | 13.05% |
 | France | $195.10 | 8.38% |
 | Brazil | $190.10 | 8.16% |
@@ -280,7 +268,7 @@ ORDER BY month;
 | … | … | … |
 | 2013-12 | $38.62 | $2328.60 |
 
-## 📊 Advanced EDA Queries
+##  Advanced Queries
 
 ### Query 5 — Revenue by Country 
 
@@ -288,10 +276,6 @@ ORDER BY month;
 
 ```sql
 SELECT 
-    CASE 
-        WHEN c."Country" = 'Usa' THEN 'USA'               -- normalize country name
-        ELSE c."Country"
-    END AS country, 
     SUM(il."Quantity" * il."UnitPrice")::money AS total_revenue -- currency format
 FROM "Invoice"       AS inv
 JOIN "InvoiceLine"   AS il  ON inv."InvoiceId"   = il."InvoiceId"
@@ -381,7 +365,7 @@ FROM monthly
 ORDER BY month;
 ```
 
-**Results (excerpt):**
+**Results:**
 
 | month | revenue | pct_change |
 |-------|---------|------------|
@@ -475,7 +459,7 @@ ORDER BY 1;
 | 2013-12 | 5.52 |
 
 
-## **Top Insight:**
+## **Top Insights:**
 
 * **Top Markets:** USA dominates sales, followed by Canada, France, Brazil, and Germany.
 * **Revenue by Genre:** Rock, Latin, and Metal generate over 50% of total revenue.
