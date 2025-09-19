@@ -8,13 +8,13 @@
 
 ## 🎯 About This Internship
 
-Welcome to my comprehensive **Data Analytics Internship Portfolio** with **Elevvo**! Over the course of one intensive month (July 28 - August 25, 2025), I dove deep into the world of data analytics, tackling real-world business challenges and delivering actionable insights.
+Welcome to my comprehensive **Data Analytics Internship Portfolio** with **Elevvo**! Over the course of one intensive month (July 25 - August 25, 2025), I dove deep into the world of data analytics, tackling real-world business challenges and delivering actionable insights.
 
 ### 🏆 Internship Highlights
 - **Duration:** 4 weeks of intensive hands-on experience
 - **Focus:** End-to-end data analysis lifecycle
 - **Projects:** 4 comprehensive business analytics challenges
-- **Tools Mastered:** Excel (Power Query + PivotTables), SQL, Power BI
+- **Tools Mastered:** Excel, SQL,Power BI
 - **Outcome:** Fully-sponsored internship with official certification
 
 <div align="center">
@@ -27,7 +27,7 @@ Welcome to my comprehensive **Data Analytics Internship Portfolio** with **Elevv
 
 ---
 
-## 📂 Portfolio Structure
+## 📂 Repository Structure
 
 ```
 📦 elevvo-intern/
@@ -56,7 +56,7 @@ Welcome to my comprehensive **Data Analytics Internship Portfolio** with **Elevv
 **Challenge:** Transform messy survey data into actionable insights
 - **Tool:** Excel Power Query with custom M code
 - **Outcome:** Cleaned 10K+ survey responses, identified key customer satisfaction drivers
-- **Key Insight:** Revealed strong correlation between response time and satisfaction scores
+- **Key Insight:** Revealed a strong correlation between response time and satisfaction scores
 
 ### 💾 Task 5: SQL Product Sales Analysis
 **Challenge:** Complex relational database analysis
@@ -103,27 +103,6 @@ graph TD
 - **📈 Progressive Complexity:** From basic analysis to advanced BI solutions
 
 ---
-
-## 🚀 Quick Start Guide
-
-### For Recruiters & Hiring Managers
-1. 📋 Check out the [Executive Summary](Reports.md/) for high-level insights
-2. 🎯 Browse project screenshots in each `task-*/snips/` folder
-3. 📊 Review the methodology and tools used
-
-### For Technical Review
-1. 📂 Open any `task-*/task-material/` folder for source files
-2. 🔄 Refresh Excel Power Query connections (data sources included)
-3. 🔍 Examine SQL scripts and Power BI models
-4. ✅ Check validation screenshots in `snips/` folders
-
-### For Learning & Inspiration
-1. 📖 Read individual task READMEs for detailed methodology
-2. 🧩 Study the Power Query M code for ETL best practices
-3. 💡 Explore the business insights and recommendation frameworks
-
----
-
 ## 📈 Key Achievements & Impact
 
 <div align="center">
@@ -133,7 +112,7 @@ graph TD
 | **Projects Completed** | 4 comprehensive analyses |
 | **Data Records Processed** | 50,000+ rows across all projects |
 | **Business Insights Generated** | 20+ actionable recommendations |
-| **Tools Mastered** | 4 professional analytics platforms |
+| **Tools Mastered** | 3 professional analytics platforms |
 | **Documentation Created** | 100% reproducible workflows |
 
 </div>
