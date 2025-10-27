@@ -126,6 +126,7 @@ In File 4:
 
 ## Q8 – Preferred Programming Language to Learn First
 
+![Learn First Language Image](Snips/LearnFirstLang.png)
 
 ### EDA:
 - Python overwhelmingly leads with **78.6%** of respondents recommending it as the first language to learn.
@@ -152,7 +153,7 @@ In File 4:
 
 ## Q11 – Primary Computing Platforms
 
-![Computing Platform Image](/Snips/CompPlatform.png)
+![Computing Platform Image](Snips/CompPlatform.png)
 
 ### EDA:
 - Desktop (18.3k) and laptop (16.2k) dominate usage.
@@ -164,7 +165,7 @@ In File 4:
 
 ## Q13 – Frequency of TPU Using
 
-![TPU Usage Image](/Snips/TPUUsed.png)
+![TPU Usage Image](Snips/TPUUsed.png)
 
 ### EDA:
 - "Never" is the most common response (40k), followed by occasional participation (2–5 times: 6.5k; once: 6.2k).
@@ -176,7 +177,7 @@ In File 4:
 
 ## Q15 – Frequency of Machine Learning Usage
 
-![Machine Learning Used Image](/Snips/MLUsed.png)
+![Machine Learning Used Image](Snips/MLUsed.png)
 
 ### EDA:
 - Most respondents use ML infrequently: <1 time (26.9k) or 1–2 times (16.8k).
