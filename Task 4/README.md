@@ -225,17 +225,9 @@ In File 4:
 *   Exported cleaned sheet as a separate workbook for targeted EDA.
     
 
+### Exploratory Data Analysis & Insights
 
-**Links**
-
-
-*   Cleaned sheet: \[LINK\_TO\_SHEET\_3\_GOES\_HERE\]
-    
-
-
-**Exploratory Data Analysis & Insights**
-
-### Findings by question group
+**Findings by question group**
 
 #### Q16 Frameworks
 
@@ -243,23 +235,20 @@ In File 4:
 
 -   Insight: audience is split between classical ML (Scikit‑Learn, XGBoost) and deep learning (TensorFlow/Keras, PyTorch).
 
--   Doc note: prioritize Scikit‑Learn resources first, then TensorFlow/Keras; maintain XGBoost templates for tabular teams and PyTorch for research audiences.
 
 #### Q18 Computer Vision (CV)
 
 -   Counts (excludes "None"): Classification 11,072; GeneralTools 7,008; Segmentation 6,804.
 
--   Insight: Classification has highest ROI potential; GeneralTools (preprocessing, augmentation, eval) improves reuse; Segmentation demands higher‑value, higher‑effort starter kits.
+-   Insight: Classification has highest ROI potential; GeneralTools (preprocessing, augmentation, eval) improves reuse; Segmentation demands higher‑value.
 
--   Doc note: deliver Classification end‑to‑end notebooks, a small reusable GeneralTools library, and a segmentation starter kit (labeling schema + baseline model).
 
 #### Q19 Natural Language Processing (NLP)
 
 -   Counts: Embeddings 6,868; Seq2Seq 4,905; Contextual 1,867; OTHER 240.
 
--   Insight: representation and retrieval workflows dominate; generation workflows are significant; contextual models are less common and are a next‑step for advanced teams.
+-   Insight: representation and retrieval workflows dominate; generation workflows are significant; contextual models are less common and are a next step for advanced teams.
 
--   Doc note: release Embeddings + semantic search tutorial and Seq2Seq templates; publish a short guide when to move to contextual models.
 
 #### Q24 Work activities
 
@@ -267,79 +256,19 @@ In File 4:
 
 -   Insight: analysis and prototyping are most frequent; fewer respondents complete production and iterative improvement.
 
--   Doc note: create prototype→production accelerators, monitoring templates, and experiment‑tracking playbooks.
 
-#### Q20--Q23, Q25--Q26 Segmentation and budget signals (summary of provided numerical analyses)
+#### Q20--Q23, Q25--Q26  (summary of provided numerical analyses)
 
--   CompanySize × Employer_UsesML heatmap (latest): Enterprise (10,000+) shows highest Established ML (~37.6%); Large and Medium show strong Exploratory shares; Small and Micro show high Exploratory and No ML.
+-   **CompanySize × Employer_UsesML heatmap** : Enterprise (10,000+) shows highest Established ML (~37.6%); Large and Medium show strong Exploratory shares; Small and Micro show high Exploratory and No ML.
 
--   Staff & Compensation: larger teams have more mid/high compensation; Solo and Small concentrate in 0--50K band (Solo ~78% in 0--50K).
+-   **Staff & Compensation**: larger teams have more mid/high compensation; Solo and Small concentrate in 0--50K band (Solo ~78% in 0--50K).
 
--   ML Spend × CompanySize: Enterprise drives the top spend band ($100k+) with 46.3% in that band; Micro and Small show the highest $0 and $1--$99 shares.
+-   **ML Spend × CompanySize**: Enterprise drives the top spend band ($100k+) with 46.3% in that band; Micro and Small show the highest $0 and $1--$99 shares.
 
 -   Insight: maturity and budget scale with company size; the conversion funnel from exploratory to production is the primary growth opportunity; mid‑spend bands ($1k--$99k) are best for paid pilots.
 
-### Prioritized recommendations (short list)
 
-1.  Product deliverables (immediate)
-
-    -   Scikit‑Learn starter pack + XGBoost tabular cookbook.
-
-    -   TensorFlow/Keras CNN + Seq2Seq starter notebooks.
-
-    -   Embeddings + semantic search tutorial with vector DB guidance.
-
-2.  Prototype→Production accelerators (near term)
-
-    -   One‑page Prototype→Run checklist; deployment templates (Docker, CI/CD), simple monitoring/alerts.
-
-    -   Managed pilot package for Large/Medium customers priced for $1k--$99k conversion.
-
-3.  Enterprise play (high priority)
-
-    -   Enterprise package: SLAs, governance/compliance checklist, case studies, high‑touch onboarding. Target Enterprise (10,000+) first.
-
-4.  Small/Micro funnel (low friction)
-
-    -   Freemium starter kits, 1‑hour workshops, industry examples showing quick ROI to reduce No ML share.
-
-5.  GTM and lead scoring
-
-    -   Score by CompanySize + Employer_UsesML + Q26 spend band; prioritize outreach to segments with Established ML or mid/high spend and larger DS teams.
-
-6.  Content & enablement
-
-    -   GeneralTools library (CV preprocessing, eval metrics), MLOps playbook, compensation‑based pricing rationale, and three one‑page plays: Enterprise, Medium conversion, Small starter.
-
-### Actionable visuals and reproducible steps to add to docs
-
--   Mandatory visuals:
-
-    -   Framework ranking bar chart (counts).
-
-    -   CV & NLP stacked bars (counts).
-
-    -   CompanySize × Employer_UsesML heatmap (row % with color scale).
-
-    -   Group Size × Compensation stacked % bar.
-
-    -   CompanySize × ML Spend stacked % bar and a funnel (ordered spend bands).
-
--   Pivot/PowerQuery quick recipes (copyable)
-
-    -   CompanySize × Employer_UsesML heatmap:
-
-        1.  Insert → PivotTable → Add data to Data Model. Rows = CompanySize, Columns = Employer_UsesML, Values = Respondent_ID (Distinct Count). Values → Show Values As → % of Row Total. Apply Conditional Formatting → Color Scales.
-
-    -   Group Size × Compensation medians:
-
-        1.  Map compensation ranges to median numeric values via VLOOKUP or Power Query lookup. Group by DS_StaffCount and compute median (Power Query Group By median). Apply Color Scales to median column.
-
-    -   ML Spend funnel by CompanySize:
-
-        1.  Pivot: Rows = Spend band (manual sort high→low), Columns = CompanySize, Values = Respondent_ID (Distinct Count). Values → Show Values As → % of Grand Total for an overall funnel or % of Column Total to compare by company size. Copy values to a new sheet and Insert → Funnel Chart or stacked bar arranged by spend order.
-
-### Simple stakeholder summaries (copy‑ready)
+### Simple  summaries
 
 -   "Scikit‑Learn is the most used framework; prioritize Scikit‑Learn and TensorFlow/Keras training and templates."
 
@@ -349,7 +278,6 @@ In File 4:
 
 -   "Medium and Large firms are the best candidates for paid pilots; Small and Micro need low‑friction starter kits."
 
--   "Use CompanySize + Employer_UsesML + Q26 spend to score leads and prioritize outreach."
 
 
 ### Sheet 4 — Paired Current vs Future (Q27, Q32, Q34, Q36, Q37, Q38)
