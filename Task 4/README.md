@@ -205,10 +205,7 @@ In File 4:
 
 
 
-  ### Sheet 3 — Questions 16–26
-
-
-**File:** Excel\_Sheets/Questions 16–26.xlsx
+  ### [Sheet 3 — Questions 16–26](Excel_Sheets/Questions%2016%E2%80%9326.xlsx)
 
 
 **Actions Taken**
@@ -218,18 +215,16 @@ In File 4:
     
 *   Applied the same mapping, labeling, data‑type enforcement, and cleaning techniques described for Sheet 1 (no repetition here).
     
-*   Multi‑answer columns labeled for readability; original binaries preserved for reproducibility.
-    
-*   Rare categories collapsed to **Other** when frequency < 0.5%; missing indicators standardized to null; explicit flags added where applicable.
-    
+*   Multi‑answer columns labeled for readability.
+        
 *   Exported cleaned sheet as a separate workbook for targeted EDA.
     
 
 ### Exploratory Data Analysis & Insights
 
-**Findings by question group**
-
 #### Q16 Frameworks
+
+![ML Framework](Snips/MLFramework.png)
 
 -   Counts: Scikit‑Learn (45,876); TensorFlow (32,108); Keras (28,059); XGBoost (19,723); PyTorch (17,515).
 
@@ -238,6 +233,9 @@ In File 4:
 
 #### Q18 Computer Vision (CV)
 
+
+![CV](Snips/CV.png)
+
 -   Counts (excludes "None"): Classification 11,072; GeneralTools 7,008; Segmentation 6,804.
 
 -   Insight: Classification has highest ROI potential; GeneralTools (preprocessing, augmentation, eval) improves reuse; Segmentation demands higher‑value.
@@ -245,12 +243,16 @@ In File 4:
 
 #### Q19 Natural Language Processing (NLP)
 
+![NLP](Snips/NLP.png)
+
 -   Counts: Embeddings 6,868; Seq2Seq 4,905; Contextual 1,867; OTHER 240.
 
 -   Insight: representation and retrieval workflows dominate; generation workflows are significant; contextual models are less common and are a next step for advanced teams.
 
 
 #### Q24 Work activities
+
+![Tasks4 Roles](Snips/Tasks4Roles.png)
 
 -   Counts: AnalyzeData 31,152; PrototypeML 21,371; BuildInfra 16,661; RunMLService 15,248; ResearchML 12,792; ImproveModels 10,798; OTHER 2,640.
 
@@ -261,9 +263,15 @@ In File 4:
 
 -   **CompanySize × Employer_UsesML heatmap** : Enterprise (10,000+) shows highest Established ML (~37.6%); Large and Medium show strong Exploratory shares; Small and Micro show high Exploratory and No ML.
 
+![Company & ML](Snips/Company&ML.png)
+
 -   **Staff & Compensation**: larger teams have more mid/high compensation; Solo and Small concentrate in 0--50K band (Solo ~78% in 0--50K).
 
+![DS & Compensation](Snips/DS&Compensation.png)
+
 -   **ML Spend × CompanySize**: Enterprise drives the top spend band ($100k+) with 46.3% in that band; Micro and Small show the highest $0 and $1--$99 shares.
+
+![ML Spend & Company Size](Snips/ML_Spend%20%26%20Company%20Size.png)
 
 -   Insight: maturity and budget scale with company size; the conversion funnel from exploratory to production is the primary growth opportunity; mid‑spend bands ($1k--$99k) are best for paid pilots.
 
