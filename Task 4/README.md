@@ -10,7 +10,8 @@ We started with the Kaggle Data Science & ML Survey (2017–2021) — a huge, me
 
 ### 2. The Data
 
-**Source:** Kaggle Data Science & ML Survey 2017–2021
+**Source:** [Kaggle Data Science & ML Survey 2017–2021](https://www.kaggle.com/datasets/andradaolteanu/kaggle-data-science-survey-20172021)
+
 
 **Original Rows:** 101,846 (after removing 4,456 duplicates)
 
@@ -60,7 +61,7 @@ In File 4:
 
 ## 🚀 Cleaning Phase
 
-### Sheet 1 — Demographic & General (Q1–Q6)
+[Sheet 1 — Demographic & General (Q1–Q6)](Excel_Sheets/Demographics%20&%20General%20Questions.xlsx)
 
 **Actions Taken:**
 - **Headers:** Renamed via mapping table; removed survey question text from first row.
@@ -76,17 +77,26 @@ In File 4:
 
 ## Key Analyses Conducted
 
-1. **Top 10 Respondented Countries**  
+1. **Top 10 Respondent Countries**
+   
+   ![Respondent Countries](Snips/Respondent_Conutries.png)
+   
    Ranked the countries with the highest number of survey participants, providing a clear view of the dataset's geographic concentration and primary respondent markets.
+   
 
-2. **Education Level Distribution Across All Jobs**  
+2. **Education Level Distribution Across All Jobs**
+
+   ![Education Jobs Distribution](Snips/EducationJobsDistribution.png)
+  
    Measured the spread of qualifications (e.g., High School, Bachelor's, Master's, PhD) across the entire job spectrum, capturing the global talent pipeline's education makeup.
 
-3. **Educational Backgrounds of Data Science Professionals**  
-   Focused specifically on respondents in data‑science‑related roles to uncover the academic paths most common in this field, from undergraduate majors to postgraduate specializations.
 
-4. **Top 5 Countries Leading Job Markets — Role Popularity by Country**  
-   Identified the five most dominant job markets in the dataset, then broke down which roles are most prevalent in each, revealing pockets of specialization.
+3. **Educational Backgrounds of Data Science Professionals**  
+
+![Education In DS](Snips/EducationInDS.png)
+
+ Focused specifically on respondents in data‑science‑related roles to uncover the academic paths most common in this field, from undergraduate majors to postgraduate specializations.
+
 
 # 🔍 Analyze the Insights
 
@@ -96,9 +106,6 @@ In File 4:
 - **Education Landscape**: The overall workforce skews towards higher education levels, with a strong representation of bachelor's and master's degree holders — but the proportion varies by country, hinting at differences in national education pipelines.
 
 - **Data Science Talent Profile**: Data‑science professionals lean heavily toward advanced degrees, suggesting employers in this field may prioritize postgraduate qualifications or that such roles attract candidates with deeper academic backgrounds.
-
-- **Market Specialization**: The leading five job markets reveal distinct role patterns — some are tech‑heavy, others show business or operations dominance — indicating that workforce development and recruitment strategies should be tailored to regional specializations.
-
 
 
 --------------------
