@@ -202,3 +202,144 @@ In File 4:
 - **Engagement gaps are evident** in both Q13 and Q15: large "Never" or "Low‑frequency" segments highlight untapped potential for participation in the surveyed activities and for machine learning adoption.
 
 - **Adoption strategies should focus on conversion**, moving low‑engagement respondents into occasional or regular users through targeted awareness, accessible resources, and low‑barrier entry points.
+
+
+
+  ### Sheet 3 — Questions 16–26
+
+
+**File:** Excel\_Sheets/Questions 16–26.xlsx
+
+
+**Actions Taken**
+
+
+*   Headers normalized; survey‑text rows removed.
+    
+*   Applied the same mapping, labeling, data‑type enforcement, and cleaning techniques described for Sheet 1 (no repetition here).
+    
+*   Multi‑answer columns labeled for readability; original binaries preserved for reproducibility.
+    
+*   Rare categories collapsed to **Other** when frequency < 0.5%; missing indicators standardized to null; explicit flags added where applicable.
+    
+*   Exported cleaned sheet as a separate workbook for targeted EDA.
+    
+
+
+**Links**
+
+
+*   Cleaned sheet: \[LINK\_TO\_SHEET\_3\_GOES\_HERE\]
+    
+
+
+**Exploratory Data Analysis & Insights**
+
+
+*   Top selections and co‑occurrence matrices: (insert counts / percentages and short comments here)
+    
+*   Ordinal distributions by career stage and country: (insert numeric summaries and comments here)
+    
+*   Low‑variance columns recommended for removal: (list and counts here)
+    
+
+
+**Notes for insertion**
+
+
+*   Replace \[LINK\_TO\_SHEET\_3\_GOES\_HERE\] with the repo path or file link.
+    
+*   Paste your real EDA numbers and short comments into the three EDA bullets above.
+    
+
+
+### Sheet 4 — Paired Current vs Future (Q27, Q32, Q34, Q36, Q37, Q38)
+
+
+**File:** Excel\_Sheets/Paired\_Current\_vs\_Future.xlsx
+
+
+**Actions Taken**
+
+
+*   Headers normalized to mirrored naming (\_Now / \_Future); Respondent\_ID ensured and deduplicated.
+    
+*   Applied the same mapping, labeling, data‑type enforcement, and cleaning techniques described for Sheet 1 (no repetition here).
+    
+*   Harmonized vocabulary across pairs; created explicit 0/1 binary flags per choice per side including **None** and **Other**.
+    
+*   Ordinal items coded where present; added **delta** (Future – Current) and **Direction** (1 = increase, 0 = no change, -1 = decrease); audit table created for unmapped values.
+    
+
+
+**Links**
+
+
+*   Cleaned paired sheet: \[LINK\_TO\_SHEET\_4\_GOES\_HERE\]
+    
+
+
+**Exploratory Data Analysis & Insights**
+
+
+*   Per‑choice deltas (top gainers and losers): (insert numeric delta table highlights and interpretation here)
+    
+*   Direction distribution summary: (insert counts for increase / no change / decrease)
+    
+*   Demographic segments with highest positive adoption intent: (insert top countries / career stages and percentages)
+    
+
+
+**Notes for insertion**
+
+
+*   Replace \[LINK\_TO\_SHEET\_4\_GOES\_HERE\] with the repo path or file link.
+    
+*   Paste your real delta numbers, direction counts, and segment percentages into the EDA bullets.
+    
+
+
+### Sheet 5 — Questions 31, 33, 35, 39–42
+
+
+**File:** Excel\_Sheets/Questions 31\_33\_35\_39–42.xlsx
+
+
+**Actions Taken**
+
+
+*   Headers standardized and question header row removed.
+    
+*   Applied the same mapping, labeling, data‑type enforcement, and cleaning techniques described for Sheet 1 (no repetition here).
+    
+*   Single‑answer mappings documented with raw values preserved in \_raw columns; scale normalizations stored centrally.
+    
+*   Derived indicators (e.g., **Active\_ML\_User**, **Cloud\_Adopter**) created; range and logic checks applied and anomalies flagged.
+    
+
+
+**Links**
+
+
+*   Cleaned sheet: \[LINK\_TO\_SHEET\_5\_GOES\_HERE\]
+    
+
+
+**Exploratory Data Analysis & Insights**
+
+
+*   Frequency and intensity summaries (top counts and percentages): (insert numbers and concise interpretation here)
+    
+*   Correlations with tools and demographics predicting heavy ML use: (insert correlation highlights and numeric strength)
+    
+*   List of validation anomalies found and action taken: (insert counts and short notes)
+    
+
+
+**Notes for insertion**
+
+
+*   Replace \[LINK\_TO\_SHEET\_5\_GOES\_HERE\] with the repo path or file link.
+    
+*   Paste your real EDA numbers, correlation strengths, and anomaly counts into the EDA bullets.
+
