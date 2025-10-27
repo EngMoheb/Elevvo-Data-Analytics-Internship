@@ -110,25 +110,12 @@ In File 4:
 
 --------------------
 
-### Sheet 2 — Questions 7–15
+[Sheet 2 — Questions 7–15](Excel_Sheets/Questions%207–15.xlsx)
 
 **Summary:**
 - **Headers:** Renamed via mapping table; survey text row removed.
-- Contains single‑answer and multi‑answer questions.
-- **Single‑answer columns (mapped):** [list columns here] — mapped raw responses into clean categories.
-- **Multi‑answer columns (labeled):** [list columns here] — converted 0 to "Not Selected" and 1 to "Selected" for readability.
-
-**Example labeling logic in Power Query:**
-
-```powerquery
-LabelMap = [
-    #"Q7_Python" = "Lang: Python",
-    #"Q7_SQL"    = "Lang: SQL"
-],
-Existing = List.Intersect({Record.FieldNames(LabelMap), Table.ColumnNames(PreviousStep)}),
-Pairs = List.Transform(Existing, each {_, Record.Field(LabelMap, _)}),
-Renamed = Table.RenameColumns(PreviousStep, Pairs, MissingField.Ignore)
-```
+- **Single‑answer columns (mapped):** mapped raw responses into clean categories.
+- **Multi‑answer columns (labeled):**  — converted 0 to "Not Selected" and 1 to "Selected" for readability.
 
 **CPU Column Issue (Simplified):**
 - In the raw data, the "CPU" column came in blank for all rows.
@@ -138,6 +125,7 @@ Renamed = Table.RenameColumns(PreviousStep, Pairs, MissingField.Ignore)
 # Exploratory Data Analysis & Insights 
 
 ## Q8 – Preferred Programming Language to Learn First
+
 
 ### EDA:
 - Python overwhelmingly leads with **78.6%** of respondents recommending it as the first language to learn.
@@ -149,6 +137,8 @@ Renamed = Table.RenameColumns(PreviousStep, Pairs, MissingField.Ignore)
 - Training programs and beginner resources should prioritize Python, with optional tracks for R and SQL.
 
 ## Q9 – Distribution of Preferred IDEs
+
+![IDE Image](Snips/IDE.png)
 
 ### EDA:
 - **Jupyter** leads with 41.5k selections, followed by **VS Code** (27.1k) and **PyCharm** (23.9k).
@@ -162,6 +152,8 @@ Renamed = Table.RenameColumns(PreviousStep, Pairs, MissingField.Ignore)
 
 ## Q11 – Primary Computing Platforms
 
+![Computing Platform Image](/Snips/CompPlatform.png)
+
 ### EDA:
 - Desktop (18.3k) and laptop (16.2k) dominate usage.
 - Other platforms (workstations, "Platform" category, and miscellaneous) are far less common.
@@ -170,7 +162,9 @@ Renamed = Table.RenameColumns(PreviousStep, Pairs, MissingField.Ignore)
 - Development and deployment strategies should assume desktop/laptop as the primary environment.
 - Optimization for less common platforms may have limited ROI unless targeting specialized user groups.
 
-## Q13 – Frequency of [Activity] Participation
+## Q13 – Frequency of TPU Using
+
+![TPU Usage Image](/Snips/TPUUsed.png)
 
 ### EDA:
 - "Never" is the most common response (40k), followed by occasional participation (2–5 times: 6.5k; once: 6.2k).
@@ -181,6 +175,8 @@ Renamed = Table.RenameColumns(PreviousStep, Pairs, MissingField.Ignore)
 - Engagement strategies should focus on converting "Never" respondents into occasional participants through awareness campaigns or low‑commitment entry points.
 
 ## Q15 – Frequency of Machine Learning Usage
+
+![Machine Learning Used Image](/Snips/MLUsed.png)
 
 ### EDA:
 - Most respondents use ML infrequently: <1 time (26.9k) or 1–2 times (16.8k).
