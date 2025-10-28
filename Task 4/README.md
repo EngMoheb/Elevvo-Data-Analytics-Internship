@@ -371,10 +371,5 @@ In File 4:
     
 
 
-**Notes for insertion**
 
-
-*   Replace \[LINK\_TO\_SHEET\_5\_GOES\_HERE\] with the repo path or file link.
-    
-*   Paste your real EDA numbers, correlation strengths, and anomaly counts into the EDA bullets.
 
