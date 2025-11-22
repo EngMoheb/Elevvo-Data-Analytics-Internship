@@ -1,0 +1,52 @@
+﻿Segment,Category ,Sub-Category, Total Revenue ,Total Units, AOV 
+Home Office,Furniture,Bookcases," $11,858 ",32, $383 
+Home Office,Furniture,Chairs," $56,445 ",100, $576 
+Home Office,Furniture,Furnishings," $16,508 ",172, $103 
+Home Office,Furniture,Tables," $35,829 ",53, $717 
+Home Office,Office Supplies,Appliances," $18,081 ",66, $274 
+Home Office,Office Supplies,Art," $4,117 ",148, $30 
+Home Office,Office Supplies,Binders," $32,930 ",263, $143 
+Home Office,Office Supplies,Envelopes," $2,699 ",40, $69 
+Home Office,Office Supplies,Fasteners, $544 ,42, $13 
+Home Office,Office Supplies,Labels," $1,675 ",73, $25 
+Home Office,Office Supplies,Paper," $17,820 ",262, $82 
+Home Office,Office Supplies,Storage," $42,585 ",132, $338 
+Home Office,Office Supplies,Supplies," $1,489 ",28, $53 
+Home Office,Technology,Accessories," $31,895 ",137, $238 
+Home Office,Technology,Copiers," $32,880 ",13," $2,529 "
+Home Office,Technology,Machines," $49,419 ",23," $2,246 "
+Home Office,Technology,Phones," $68,209 ",162, $461 
+Corporate,Furniture,Bookcases," $34,006 ",64, $531 
+Corporate,Furniture,Chairs," $95,203 ",183, $557 
+Corporate,Furniture,Furnishings," $23,979 ",278, $95 
+Corporate,Furniture,Tables," $67,133 ",103, $685 
+Corporate,Office Supplies,Appliances," $34,170 ",153, $229 
+Corporate,Office Supplies,Art," $8,526 ",214, $43 
+Corporate,Office Supplies,Binders," $50,007 ",460, $129 
+Corporate,Office Supplies,Envelopes," $5,798 ",81, $73 
+Corporate,Office Supplies,Fasteners, $783 ,59, $14 
+Corporate,Office Supplies,Labels," $4,062 ",100, $42 
+Corporate,Office Supplies,Paper," $23,409 ",400, $65 
+Corporate,Office Supplies,Storage," $77,975 ",256, $335 
+Corporate,Office Supplies,Supplies," $19,400 ",60, $329 
+Corporate,Technology,Accessories," $46,593 ",219, $232 
+Corporate,Technology,Copiers," $46,829 ",20," $2,341 "
+Corporate,Technology,Machines," $60,277 ",35," $1,773 "
+Corporate,Technology,Phones," $90,343 ",268, $370 
+Consumer,Furniture,Bookcases," $67,949 ",130, $535 
+Consumer,Furniture,Chairs," $171,174 ",324, $576 
+Consumer,Furniture,Furnishings," $48,725 ",481, $110 
+Consumer,Furniture,Tables," $99,848 ",158, $648 
+Consumer,Office Supplies,Appliances," $52,367 ",240, $229 
+Consumer,Office Supplies,Art," $14,062 ",423, $37 
+Consumer,Office Supplies,Binders," $117,092 ",769, $174 
+Consumer,Office Supplies,Envelopes," $7,632 ",127, $61 
+Consumer,Office Supplies,Fasteners," $1,675 ",113, $15 
+Consumer,Office Supplies,Labels," $6,611 ",184, $37 
+Consumer,Office Supplies,Paper," $35,600 ",676, $61 
+Consumer,Office Supplies,Storage," $98,783 ",444, $244 
+Consumer,Office Supplies,Supplies," $25,531 ",96, $272 
+Consumer,Technology,Accessories," $85,699 ",400, $234 
+Consumer,Technology,Copiers," $66,539 ",33," $2,016 "
+Consumer,Technology,Machines," $79,543 ",57," $1,420 "
+Consumer,Technology,Phones," $169,231 ",446, $412 
