@@ -3,8 +3,11 @@
 ![Task Info](Snips/Task%20Info.png)  
 
 ---
+
 ## 🎯 Executive Summary  
-What started as a messy Superstore dataset has become a powerful analytical dashboard that reveals the hidden patterns driving **$2,261,537 in revenue**. Through carefully crafted visualizations, we've uncovered critical insights:
+What started as a messy Superstore dataset has become a powerful analytical dashboard that reveals the hidden patterns driving **$2,261,537 in revenue**.  
+
+Through carefully crafted visualizations, we've uncovered critical insights:
 - **Consumers dominate our revenue stream ($1.15M, 50.76%)**  
 - **Shipping preferences reveal untapped pricing opportunities (Corporate Same Day $45,121)**  
 - **Regional and product-level analysis highlights concentration risks and growth opportunities**  
@@ -13,14 +16,15 @@ What started as a messy Superstore dataset has become a powerful analytical dash
 ---
 
 ## 📌 Page 1: Executive KPIs, Regional & Product Insights  
-[Raw Data](Sheets/RawData.xlsx)  
-[Cleaned Data](Sheets/CleanedData.xlsx)  
-[Power BI File](Sheets/Task.pbix)  
+
+📂 **Supporting Files**  
+- [Raw Data](Sheets/RawData.xlsx)  
+- [Cleaned Data](Sheets/CleanedData.xlsx)  
+- [Power BI File](Sheets/Task.pbix)  
 
 ---
-![KPI](Snips/KPI.png) 
 
----
+![KPI](Snips/KPI.png)  
 
 **Overview of key performance metrics**
 
@@ -57,20 +61,19 @@ What started as a messy Superstore dataset has become a powerful analytical dash
 
 > 🔎 **Highlight:** **Phones ($327,782)** and **Chairs ($322,823)** are the top revenue drivers, together contributing nearly $650,000.
 
-[Top Products](Sheets/Top%20Products.csv)  
-[Sales by Region](Sheets/Sales%20by%20Region.csv)  
-
+📂 **Supporting Files**  
+- [Top Products](Sheets/Top%20Products.csv)  
+- [Sales by Region](Sheets/Sales%20by%20Region.csv)  
 
 ---
 
 ## 📌 Page 2: Customer Segment Deep Dive  
 **Understanding who our customers are and how they behave across segments and shipping preferences**
 
-
-
 ![Customer Segment](Snips/Customer%20Segment.png)  
 
 ---
+
 ### 📊 Segment Revenue Breakdown
 | Segment       | Revenue     | Percentage | Units Sold | AOV      | Customers |
 |---------------|-------------|------------|------------|----------|-----------|
@@ -114,19 +117,20 @@ What started as a messy Superstore dataset has become a powerful analytical dash
 - **$45,121** → Corporate Same Day spend (disproportionately high).  
 - **$1,340,831** → Standard Class revenue (dominant shipping mode).  
 
-[Segment Details](Sheets/Segment%20Details.csv)  
-[Ship-Mode Preference](Sheets/Ship-Mode%20Preference.csv)  
-[Revenue by Customer Segment](Sheets/Revenue%20by%20Customer%20Segment.csv)  
+📂 **Supporting Files**  
+- [Segment Details](Sheets/Segment%20Details.csv)  
+- [Ship-Mode Preference](Sheets/Ship-Mode%20Preference.csv)  
+- [Revenue by Customer Segment](Sheets/Revenue%20by%20Customer%20Segment.csv)  
 
 ---
 
 ## 📌 Page 3: Product Portfolio Scatter  
 **Analyzing product pricing and performance across categories from 2015 to 2018**
 
-
 ![Product Portfolio Scatter](Snips/Product%20portfolio%20Scatter.png)  
 
 ---
+
 ### 📈 Tooltip-Driven Metrics
 | Year | Category        | Revenue     | Units Sold | Median Price |
 |------|-----------------|-------------|------------|--------------|
@@ -144,12 +148,15 @@ What started as a messy Superstore dataset has become a powerful analytical dash
 | 2018 | Technology      | **$269,371** | 611        | $151.19      |
 
 ---
+### 🎞️ Animated Visualization (GIF Highlight)
 
-
+> ⚡ **Dynamic Scatter Plot in Action**  
+This GIF demonstrates the interactive scatter visualization, showing how product categories evolve over time.
+> 
 ![Scatter Snip GIF](Snips/ScatterSnip.gif)  
 
-
 ---
+
 ### 📊 Supporting KPIs
 - **Average Price per Unit:** $230.77  
 - **Median Price per Unit:** **$54.49**  
@@ -163,17 +170,6 @@ What started as a messy Superstore dataset has become a powerful analytical dash
 - **Technology (2018):** Highest revenue (**$269,371**) despite fewer units (611) → premium pricing power.  
 - **Furniture:** Consistent growth, reaching **$212,314** in 2018 → stable category for margin optimization.  
 
-[Revenue by Category & Year](Sheets/RevenueByCategory%26Year.csv)  
-[Product Portfolio Scatter](Sheets/Product%20Portfolio%20Scatter.csv)  
-
----
-
-### 📌 Recommendations  
-- **Boost Office Supplies efficiency:** Focus on inventory and promotions to capitalize on high unit sales (**1,970 units in 2018**).  
-- **Leverage Technology’s premium appeal:** Maintain pricing discipline and bundle accessories with high-ticket items (**$269,371 revenue in 2018**).  
-- **Optimize Furniture margins:** Stable growth to **$212,314 in 2018** suggests potential for targeted upselling and premium product lines.  
-- **Balance pricing strategy:** Use **median price ($54.49)** as a reliable benchmark instead of skewed averages.  
-- **Regional targeting:** Expand campaigns in the **South ($389,151)** to close the gap with the West ($710,220).  
-- **Product focus:** Double down on **Phones ($327,782)** and **Chairs ($322,823)** as flagship revenue drivers.  
-
----
+📂 **Supporting Files**  
+- [Revenue by Category & Year](Sheets/RevenueByCategory%26Year.csv)
+- [Product Portfolio Scatter](Sheets/Product%20Portfolio%20Scatter.csv)  
