@@ -1,18 +1,15 @@
 # 📊 Superstore Sales Analytics: A Power BI Deep Dive  
-Transforming raw sales data into actionable business insights through interactive visualizations
 
 ## 🎯 Executive Summary  
 What started as a messy Superstore dataset has become a powerful analytical dashboard that reveals the hidden patterns driving **$2,261,537 in revenue**. Through three carefully crafted visualizations, we've uncovered critical insights:
 - **Consumers dominate our revenue stream**
 - **Shipping preferences reveal untapped pricing opportunities**
-- **Product portfolio analysis now uses robust median calculations** after fixing a critical DAX error that corrected our average price per unit to **$230.77**
-
-This documentation chronicles our analytical journey from data cleaning to dashboard creation, highlighting every decision, fix, and discovery along the way.
+- **Product portfolio analysis now uses robust median calculations** 
 
 ---
 
 ## 📌 Page 1: Executive KPIs  
-**Overview of key performance metrics from the Power BI dashboard**
+**Overview of key performance metrics**
 
 | Metric              | Value                                               |
 |---------------------|-----------------------------------------------------|
