@@ -39,7 +39,6 @@ Welcome to my comprehensive **Data Analytics Internship Portfolio** with **Elevv
 ├── 🧹 task-4/                      # Survey Data Transformation
 ├── 🔍 task-5/                      # SQL Product Analytics
 ├── 📈 task-8/                      # Power BI Retail Dashboard
-└── 📑 Reports/                     # Executive Summaries & Insights
 ```
 
 ---
